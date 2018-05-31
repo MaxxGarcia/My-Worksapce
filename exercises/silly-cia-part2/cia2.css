@@ -1,0 +1,33 @@
+.title {
+    color: darkgreen;
+}
+
+.match {
+    font-family: Georgia;
+    text-align: center;
+}
+
+p {
+    line-height: 25px;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.director {
+    float: left;
+    margin-right: 10px;
+}
+
+ul {
+    overflow: hidden;
+}
