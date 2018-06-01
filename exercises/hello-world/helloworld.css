@@ -4,3 +4,8 @@ h1 {
 ol {
     color: blueviolet;
 }
+
+img {
+    height: 100px;
+    width: 150px;
+}
