@@ -1,6 +1,7 @@
-for (var i = 0; i <= 10; i++) {  
-    if (i === 7) {
-        continue;
-    }
-    console.log(i);
+var a = Math.floor(Math.random()*10)
+var b = Math.floor(Math.random()*10)
+
+var add = function (x, y){
+    return x + y;
 }
+console.log(add(a,b));
