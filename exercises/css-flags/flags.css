@@ -65,27 +65,23 @@ p {
 }
 
 .madagascar .white {
-    display: inline-block;
-    position: relative;
     width: 25%;
-    height: 200px;
+    height: 400px;
     background-color: white;
 }
 
 .madagascar .red {
     position: relative;
-    bottom: 203px;
-    left: 20%;
-    width: 55%;
-    height: 100px;
+    left: 175px;
+    width: 200%;
+    height: 200px;
     background-color: red;
 }
 .madagascar .green {
     position: relative;
-    bottom: 203px;
-    left: 20%;
-    width: 55%;
-    height: 100px;
+    left: 175px;
+    width: 200%;
+    height: 200px;
     background-color: green;
 }
 
