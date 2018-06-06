@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box; 
+    font-size: 0px;
+    margin: 0;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color:#F5C6D6;
+    float: top;
+    z-index: 100;
+}
+
+.top {
+    border: solid black;
+    width: 33%;
+    display: inline-block;
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+    
+}
+
+.title{
+    font-size: 30px;
+    text-align: center;
+    
+}
+
+.article {
+    position: static;
+    color: red; 
+    font-size: 22px;
+    border: solid black;
+    padding: 10px;
+    margin-bottom: 20px;
+
+}
+.blog {
+    position: relative;
+    top: 100px;
+    left: 5%;
+    width: 80%;
+    margin-bottom: 0;
+
+}
+
+.images {
+    position: relative;
+    float: left;
+    top: 0;
+    margin-right: 5px;
+    max-width: 300px;
+    border: thin solid black;
+}
+
+.sub {
+    position: relative;
+    bottom: 20px;
+    font-size: 13px;
+    float: right;
+}

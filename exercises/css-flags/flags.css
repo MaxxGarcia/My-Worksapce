@@ -1,0 +1,335 @@
+* {
+    box-sizing: border-box; 
+    font-size: 0px;
+    margin: 0;
+}
+
+p {
+    font-size: 20px;
+} 
+.main{
+    display: inline-block; 
+    width: 100%;
+    border: 10px solid white; 
+} 
+.base {
+    display: inline-block; 
+    width: 65%; 
+    font-size: 12px;
+    position: relative;
+} 
+
+.france .blue {
+    display: inline-block;
+    width: 25%;
+    height: 300px;
+    background-color: blue;
+    font-size: 12px;
+}
+.france .white {
+    display: inline-block;
+    width: 25%;
+    height: 300px;
+    background-color: white;
+
+}
+
+.france .red {
+    display: inline-block;
+    width: 25%;
+    height: 300px;
+    background-color: red;
+    
+}
+
+.germany .black {
+    display: block;
+    width: 75%;
+    height: 100px;
+    background-color: red;
+}
+
+.germany .red {
+    display: block;
+    width: 75%;
+    height: 100px;
+    background-color: black;
+}
+
+.germany .yellow {
+    display: inline-block;
+    width: 75%;
+    height: 100px;
+    background-color: rgb(199, 211, 29);
+
+}
+
+.madagascar .white {
+    display: inline-block;
+    position: relative;
+    width: 25%;
+    height: 200px;
+    background-color: white;
+}
+
+.madagascar .red {
+    position: relative;
+    bottom: 203px;
+    left: 20%;
+    width: 55%;
+    height: 100px;
+    background-color: red;
+}
+.madagascar .green {
+    position: relative;
+    bottom: 203px;
+    left: 20%;
+    width: 55%;
+    height: 100px;
+    background-color: green;
+}
+
+.swizerland .red .horizontal{
+    position: relative;
+    top: 150px;
+    left: 80px;
+    width: 300px;
+    height: 100px;
+    background-color: white;
+}
+.swizerland .red .vertical{
+    position: relative;
+    bottom: 40px;
+    left: 180px;
+    width: 100px;
+    height: 275px;
+    background-color: white;
+}
+.swizerland .red{
+    display: inline-block; 
+    width: 475px;
+    height: 400px;
+    font-size: 12px;
+    background-color: red;
+    
+}
+
+.sweden .blue {
+    display: inline-block;
+    height: 400px;
+    width: 600px;
+    background-color: blue; 
+}
+
+.sweden .blue .horizontal {
+    position: relative;
+    background-color: yellow;
+    width: 600px;
+    height: 50px;
+    top: 200px;
+}
+
+.sweden .blue .vertical {
+    position: relative;
+    background-color: yellow;
+    width: 50px;
+    height: 400px;
+    bottom: 50px;
+    left: 150px;
+}
+
+.gambia .red {
+    display: block;
+    width: 50%;
+    height: 100px;
+    background-color: red;
+}
+
+.gambia .blue {
+    display: block;
+    width: 50%;
+    height: 100px;
+    background-color:blue;
+    border-top: solid 15px white;
+    border-bottom: solid 15px white;
+}
+
+.gambia .green {
+    display: inline-block;
+    width: 50%;
+    height: 100px;
+    background-color: green;
+
+} 
+
+.tonga .red {
+    background-color: red;
+    display: inline-block;
+    height: 300px;
+    width: 600px;
+}
+.tonga .red .white {
+    display: inline-block;
+    position: relative;
+    height: 150px;
+    width: 250px;
+    background-color: white;
+}
+.tonga .red .white .horizontal {
+    display: inline-block;
+    position: relative;
+    left: 50px;
+    height: 45px;
+    width: 90px;
+    background-color: red;
+}
+.tonga .red .white .vertical{
+    display: inline-block;
+    position: relative;
+    top: 25px;
+    height: 100px;
+    width: 50px;
+    background-color: red;
+}
+.tonga .red .white .horizontal2 {
+    display: inline-block;
+    position: relative;
+    right: 50px;
+    height: 45px;
+    width: 90px;
+    background-color: red;
+} 
+
+.japan .white {
+    display: inline-block;
+    height: 200px;
+    width: 400px;
+    background-color: white;
+    border: solid black;
+}
+
+.japan .white .red {
+    height: 150px;
+    width: 150px;
+    background-color:red;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    top: 10%;
+    left: 30%;
+
+} 
+
+.greece .blue {
+    background-color: blue;
+    position: relative;
+    height: 450px;
+    width: 700px;
+}
+
+.greece .blue .white1 {
+    background-color: white;
+    position: relative;
+    top: 50px;
+    height: 50px;
+    width: 700px;
+}
+.greece .blue .white2 {
+    background-color: white;
+    position: relative;
+    top: 100px;
+    height: 50px;
+    width: 700px;
+}
+
+.greece .blue .white3 {
+    background-color: white;
+    position: relative;
+    top: 150px;
+    height: 50px;
+    width: 700px;
+}
+
+.greece .blue .white4 {
+    background-color: white;
+    position: relative;
+    top: 200px;
+    height: 50px;
+    width: 700px;
+}
+
+.greece .blue .blue {
+    background-color: blue;
+    position: relative;
+    bottom: 200px;
+    width: 200px;
+    height: 200px;
+}
+
+.greece .blue .blue .horizontal {
+    background-color: white;
+    position: absolute;
+    top: 100px;
+    width: 200px;
+    height: 50px;
+}
+
+.greece .blue .blue .vertical {
+    background-color: white;
+    position: absolute;
+    left: 75px;
+    width: 50px;
+    height: 250px;
+} 
+
+.niger .orange {
+    background-color: darkorange;
+    width: 300px;
+    height: 100px;
+}
+
+.niger .white {
+    background-color: white;
+    width: 300px;
+    height: 100px;
+}
+.niger .green {
+    background-color: lime;
+    width: 300px;
+    height: 100px;
+}
+.niger .white .circle {
+    height: 100px;
+    width: 100px;
+    background-color:orange;
+    border-radius: 50%;
+    position: relative;
+    left: 30%; */
+}
+
+.maldives .red {
+    background-color:green;
+    border: solid red 75px;
+    height: 300px;
+    width: 400px;
+}
+.maldives .red .white {
+    height: 100px;
+    width: 100px;
+    background-color:white;
+    border-radius: 50%;
+    position: relative;
+    left: 30%; 
+    top: 20%;
+}
+
+.maldives .red .white .green {
+    height: 95px;
+    width: 95px;
+    background-color:green;
+    border-radius: 50%;
+    position: relative;
+    left: 20%; 
+    top: 5%;
+}
+
