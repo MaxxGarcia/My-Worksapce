@@ -1,0 +1,45 @@
+*{
+    text-align: center;
+}
+
+button{
+    color: darkblue;
+    background-color: lightblue;
+}
+
+input {
+    color: red;
+}
+
+.box {
+    border: 3px solid black;
+    padding: 90px;
+    font-size: 30px;
+    position: fixed;
+    left: 40%;
+    top: 80px;
+    color: green;
+}
+
+#add {
+    padding: 5px;
+    position: fixed;
+    left: 40%;
+}
+
+#subtract {
+    padding: 5px;
+    position: fixed;
+    left: 40%;
+    top: 30px;
+}
+
+#multiply {
+    padding: 5px;
+    position: relative;
+    left: 0;
+    position: fixed;
+    left: 40%;
+    top: 50px;
+}
+

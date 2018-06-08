@@ -1,10 +1,9 @@
-var str = "Hello my name is Albert";
+var button = document.createElement("button");
+var button = document.createElement("button");
+button.innerText = "get pressd";
 
-var change = function(){
-let strArray = str.split(" "); 
- strArray.splice(4); 
- strArray[4] = "Maxx";
-return strArray.join(" ");
-}
+button.addEventListener("click", function(event){
+    this.style.backgroundColor = "blue";
+})
 
-console.log(change());
+body.appendChild(button);

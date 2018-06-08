@@ -1,0 +1,204 @@
+*{
+    box-sizing: border-box; 
+    font-size: 20px;
+    margin: 0;
+}
+
+h1{
+    font-size: 80px;
+
+}
+
+body {
+    text-align: center;
+    background-size: cover;
+    background-image: url("https://cdn.wallpaperjam.com/content/images/4a/c1/4ac19a653bc46349dc435369554183edaf7c13bc.jpg");
+    background-color: #cccccc;
+
+}
+
+.bank{
+    border: solid goldenrod;
+    height: 50%;
+    width: 300px;
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    background-color: #A90630;
+    text-align: center;
+
+}
+
+.bank img {
+    height: 200px;
+}
+
+#owed {
+    position: relative;
+    bottom: 125px;
+    font-size: 50px;
+
+}
+.goomba{
+    display: inline-block;
+    position: fixed;
+    left: 20%;
+    
+}
+.bom{
+    position: fixed;
+    display: inline;
+    left: 40%;
+    
+}
+.cheep{
+    display: inline;
+    position: fixed;
+    left: 60%;
+    
+}
+
+
+input{
+   display: block;
+} 
+
+button {
+    display: block;
+    position: fixed;
+    left: 47%;
+    top: 500px;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    float: bottom;
+    width: 100%;
+    margin: -1px;
+    padding: 1px;
+    border: solid black;
+    background-color: #1F48A8;
+    height: 10%;
+}
+
+footer span {
+    /* border: solid black; */
+    display: inline-block;
+    width: 30%;
+    color: gold;
+}
+
+@media only screen and (max-width: 1000px){
+    .goomba{
+        display: block;
+        position: absolute;
+        left: 30px;
+        
+    }
+    .bom{
+        display: block;
+        position: absolute;
+        top: 300px;
+        
+    }
+    .cheep{
+        display: block;
+        position: absolute;
+        top: 500px;
+        left: 50px;
+        
+    }
+
+    button {
+        display: block;
+        position: fixed;
+        left: 47%;
+        top: 700px;
+    }
+    
+}
+
+@media only screen and (max-width: 850px){
+    .goomba{
+        display: block;
+        position: absolute;
+        left: 30px;
+        
+    }
+    .bom{
+        display: block;
+        position: absolute;
+        top: 400px;
+        left: 150px;
+        
+    }
+    .cheep{
+        display: block;
+        position: absolute;
+        top: 100px;
+        left: 300px;
+        
+    }
+
+    button {
+        display: block;
+        position: fixed;
+        left: 25%;
+        top: 700px;
+    }
+    .bank{
+        border: solid goldenrod;
+        height: 60%;
+        width: 300px;
+        position: absolute;
+        bottom: 0px;
+        right: 0;
+        background-color: #A90630;
+    
+    }
+    
+}
+
+
+@media only screen and (max-width: 650px){
+    .goomba{
+        position: relative;
+        display: block;
+        size: 10px;
+        
+    }
+    .bom{
+        position: relative;
+        display: block;
+        
+    }
+    .cheep{
+        position: relative;
+        display: block;
+
+        
+    }
+
+    button {
+        display: block;
+        position: fixed;
+        left: 25%;
+        top: 700px;
+    }
+    .bank{
+        border: solid goldenrod;
+        height: 60%;
+        width: 300px;
+        position: absolute;
+        bottom: 0px;
+        right: 0;
+        background-color: #A90630;
+    }
+    .body {
+        display: block;
+    }
+    
+}
+
+

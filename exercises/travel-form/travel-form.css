@@ -1,0 +1,65 @@
+body {
+   color: rgb(194, 138, 138);
+   background-image: url("https://pre00.deviantart.net/b255/th/pre/i/2014/184/1/d/goblinoid_kaiju_by_katepfeilschiefter-d7p4veu.jpg");
+   background-repeat: no-repeat; 
+   background-size: 100%;
+}
+
+div {
+    position: relative;
+    top: 16px;
+    background-color: maroon;
+    opacity: 0.89;
+    width: 40%;
+    float: right;
+}
+
+label{
+    display: block;
+    padding: 5px;
+    font-size: 25px;
+}
+
+
+
+#sub{
+    position: relative;
+    left: 10px;
+    font-size: 20px;
+}
+
+p{
+    position: relative;
+    display: inline;
+    top: 16px;
+}
+
+#footer{
+    display: block;
+    position: fixed;
+    bottom: 0;
+    float: bottom;
+    border: solid black;
+    width: 100%;
+    background-color: rgb(194, 138, 138);
+
+}
+
+#header{
+    display: block;
+    position: fixed;
+    top: 0;
+    float: top;
+    border: solid black;
+    width: 100%;
+    background-color: rgb(194, 138, 138);
+}
+
+#block {
+    position: relative;
+    width: 100%;
+    border-right: solid black;
+    color: black;
+    padding-right: 12%;
+    padding-left: 12%;
+}
