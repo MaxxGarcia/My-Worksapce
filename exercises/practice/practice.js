@@ -1,9 +1,3 @@
-var button = document.createElement("button");
-var button = document.createElement("button");
-button.innerText = "get pressd";
+console.log("a".charCodeAt(0));
 
-button.addEventListener("click", function(event){
-    this.style.backgroundColor = "blue";
-})
-
-body.appendChild(button);
+charcode
