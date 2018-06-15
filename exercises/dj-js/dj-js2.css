@@ -1,0 +1,33 @@
+div {
+    /* animation-name: onLoad;
+    animation-duration: 5s;
+    animation-delay: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse; */
+    animation: onLoad 5s 10s infinite alternate;
+}
+
+#one {
+    animation-timing-function: ease;
+}
+#two {
+    animation-timing-function: linear;
+}
+#three {
+    animation-timing-function: ease-in;
+}
+#four {
+    animation-timing-function: ease-out;
+}
+#five {
+    animation-timing-function: ease-in-out;
+}
+#six {
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+
+@keyframes onLoad {
+    from{ transform: rotate(0deg);}
+    to{ transform: rotate(360deg)}
+}

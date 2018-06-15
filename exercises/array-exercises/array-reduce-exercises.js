@@ -1,4 +1,4 @@
-let numberArray = [1,2,3];
+let numberArray = [1,2,3,4];
 
 var voters = [  
     {name:'Bob' , age: 30, voted: true},
@@ -27,19 +27,23 @@ let total = numberArray.reduce(function(total, num){
     return total + num;
 }, {});
 
-// let stringConcat = numberArray.reduce(function(total, num){
-//    let n ="";
-//    n += num.toString();
-//     return n; 
-// });
+let stringConcat = numberArray.reduce(function(accumulator, number){
+   return accumulator.toString() + number.toString();
+});
 
 
-// let totalVoted = voters.map(function(person, i){
+// let totalVoted = voters.reduce(function(accumulator, person){
     
-// });
+//     voted = [];
+//     console.log(voted.push(person))
+//     if(person.voted){
+//     voted.push(accumulator);
+//     }
+//     return voted;
+// },{});
 
-// let shoppingSpree = wishlist.map(function(items){
-//     return items.price + items.price
-// });
+let shoppingSpree = wishlist.reduce(function(total, items){
+    return items.price 
+},{});
 
 console.log(shoppingSpree);
