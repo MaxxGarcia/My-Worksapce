@@ -1,0 +1,64 @@
+{
+    "appeziers": {
+        "nachos": {
+            "ingredients": ["chips", "salsa", "olives", "refried black beans", "cheese"],
+            "Description": "some basic nachos"
+        },
+        "mini tacos": {
+            "ingredients": ["taco shells", "beef", "cheese"],
+            "description": "like tacos but small"
+        },
+        "mini burritos": {
+            "ingredients": ["tiny toritilas", "beef", "cheese"],
+            "description": "like burritos but smol"
+        }
+        },
+    "cold sandwiches": {
+        "turky": {
+            "ingredients": ["turky", "bread", "mustard", "mayo", "lettuce", "tomatoes"],
+            "description": "a sandwhich with those ingredients on it"
+        },
+        "turkey w/ avocado":{
+            "ingredients": ["same as turky but", "also acvocado"],
+            "description": "same as ingredients"
+        },
+        "ham": {
+            "ingredients": ["same as turky", "no turky tho", "but with ham"],
+            "description": "same as ingredients"
+        }
+    },
+    "hot sandwiches": {
+        "hot turky": {
+            "ingredients": ["everything in turky", "pressed into a panini"],
+            "description": "you got it dude"
+        },
+        "hot ham": {
+            "ingredients": ["everything in ham", "grilled tho"],
+            "description": "I think you know"
+        },
+        "add avocado": {
+            "ingredients": ["everything on whatever hot sandwhich you pick", "but then we add avocado"],
+            "description": "It's like everything else. But with avocado"
+            }
+
+    },
+    "desserts": {
+        "Chef's Salty Cholate Balls": {
+            "ingredients": ["choclate", "salt", "dough"],
+            "description": "just put Chef's balls in your mouth"},
+        "vanilla ice cream": {
+            "ingredients": ["yes"],
+            "description": "ice cream, flavored like a plant"
+        }
+    },
+    "drinks": {
+        "chai tea": {
+            "ingreients": ["chai mix", "dairy of choice", "flavoring of choice"],
+            "description": "We don't serve coffee cause it's nasty, have this instead"
+        },
+        "water": {
+            "ingredients": ["half a glass water", "half a class of air"],
+            "description": "It's kind of like soda but it isn't"
+        }
+    }
+}

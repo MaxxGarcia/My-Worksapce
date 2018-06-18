@@ -1,12 +1,20 @@
 * {
     margin: 0;
     box-sizing: border-box;
-    /* font-size: 0; */
+    /* font-size: 20px; */
 }
 body {
     display: flex;
     flex-direction: column;
-    height: 100vh;   
+    height: 100vh;
+    margin-left: 2%;
+    margin-right: 2%;
+    font-size: 20px;
+}
+
+.tilte {
+    align-self: center;
+    font-size: 40px;
 }
 nav {   
     display: none;

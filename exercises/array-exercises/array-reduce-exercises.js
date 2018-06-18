@@ -1,4 +1,4 @@
-let numberArray = [1,2,3,4];
+let numberArray = [1,2,3];
 
 var voters = [  
     {name:'Bob' , age: 30, voted: true},
@@ -23,27 +23,55 @@ var wishlist = [
     { title: "A second Tesla Model S", price: 90000 }
 ];
 
-let total = numberArray.reduce(function(total, num){
-    return total + num;
-}, {});
+var arrays = [  
+    ["1", "2", "3"],
+    [true],
+    [4, 5, 6]
+];
 
-let stringConcat = numberArray.reduce(function(accumulator, number){
-   return accumulator.toString() + number.toString();
-});
+let arraySum = numberArray.reduce(function(accumulator, number){
+    return accumulator + number;
+})
 
+let arrayString = numberArray.reduce(function(accumulator, number){
+    return accumulator.toString() + number.toString();
+})
 
-// let totalVoted = voters.reduce(function(accumulator, person){
-    
-//     voted = [];
-//     console.log(voted.push(person))
-//     if(person.voted){
-//     voted.push(accumulator);
-//     }
-//     return voted;
-// },{});
+let voteCount = voters.reduce(function(accumulator, voter){
+    if (voter.voted) return accumulator + 1;
+    return accumulator
+}, 0)
 
-let shoppingSpree = wishlist.reduce(function(total, items){
-    return items.price 
-},{});
+let shoppingSpree = wishlist.reduce(function(accumulator, item, i){
+    return accumulator + item.price;
+},0)
 
-console.log(shoppingSpree);
+let flatten = arrays.reduce(function(accumulator, array){
+    return accumulator + array;
+})
+
+// function voterResults(voters){
+//     return voters.reduce(function(accumulator, voter){
+//         if (voter.age <= 25) {
+//             return accumulator.youth += 1; 
+//         }
+//         return accumulator;
+//     },{ youngVotes: 0,
+//     youth: 0,
+//     midVotes: 0,
+//     mids: 0,
+//     oldVotes: 0,
+//     olds: 0
+//   })
+// }
+
+let voterResults = voters.reduce(function(accumulator, array){
+    return accumulator.youth += 1
+},{ youngVotes: 0,
+    youth: 0,
+    midVotes: 0,
+    mids: 0,
+    oldVotes: 0,
+    olds: 0
+  })
+console.log(voterResults)
