@@ -1,0 +1,192 @@
+@font-face{
+    font-family: footer-symbols;
+    src: url(verdemoderna.woff)
+}
+
+@media (max-width: 500px){
+
+    .body{
+        font-family: 'Libre Baskerville', serif;
+        color: #325050;
+    }
+    .container {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 230px auto auto auto 230pxa auto auto;
+    font-size: 20px;
+    }
+
+    .header{
+        background-image: url(http://www.csszengarden.com/214/huntington.jpg);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        flex-direction: column;
+        justify-content: center;
+        justify-items: center;
+    }
+    .logo{
+        width: 50px;
+        height: 50px;
+        margin-top: 20px;
+        padding-bottom: 0px;
+        grid-column: 1/-1
+    }
+
+    .title{
+        padding-top: 0px;
+        margin: 0px;
+        grid-column: 1/-1;
+        font-family: 'Julius Sans One', sans-serif;
+        color: #ffffff;
+    }
+    .subtitle{
+        margin: 5px;
+        grid-column: 1/-1;
+        color: rgba(255, 255, 255, 0.6);
+
+    }
+
+    .nav{
+        display: grid;
+        justify-self: stretch;
+        background-color: rgba(255, 255, 255, 0.246);
+        grid-template-columns: repeat(6, 1fr);
+        grid-column: 1/-1;
+        align-items: center;
+        
+    }
+    .view{
+        grid-column: 1/6;
+        padding-left: 150px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-family: 'Julius Sans One', sans-serif;
+        color: rgba(255, 255, 255, 0.86);
+
+    }
+
+    .arrow{
+        grid-column: 6/7;
+        justify-self: flex-end;
+        padding-right: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        color: rgba(255, 255, 255, 0.86);
+
+        
+    }
+
+    .arrow:hover{
+        background-color: rgba(255, 255, 255, 0.548);
+    }
+
+    .content{
+        background-color: white;
+        padding: 10px;
+    }
+    .content2{
+        background-image: url(http://www.csszengarden.com/214/contours-opaque.png), url(http://www.csszengarden.com/214/bamboo.png);
+        background-color: rgba(196, 220, 206, 0.609);
+        padding: 10px;
+
+    }
+    .content3{
+        background-color: white;
+        padding: 10px;
+
+    }
+
+    .sidebar{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-image:  url(http://www.csszengarden.com/214/contours@2x.png), url(http://www.csszengarden.com/214/gridlines-opaque.png), url(http://www.csszengarden.com/214/koi.jpg);
+        background-color: rgba(196, 220, 206, 0.329);
+        text-align: center;
+        padding: 10px;
+        color: rgba(255, 255, 255, 0.4);
+        font-style: italic;
+        font-size: 22px;
+    }
+
+    .sidebar p{
+        align-self: center;
+        padding: 10px;
+
+    }
+    .sidebar a {
+        color: rgba(255, 255, 255, 0.7); 
+     }
+    .sidebar2{
+        background-color: #143A3E;
+        color: grey;
+        padding: 10px;
+        font-family: footer-symbols;
+        display: flex;
+        justify-content: center;
+        font-size: 40px;
+        padding: 20px;
+        margin-top: 0;
+    }
+    .sidebar2 div{
+        padding: 10px;
+    }
+
+    .sidebar3{
+        background-color: #EAF2EE;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10px;
+        font-family: 'Julius Sans One', sans-serif;
+        font-size: 16px;
+        color: #558582;
+    }
+    .sidebar3 div{
+        border-bottom: solid thin lightgray;
+        padding: 10px;
+        margin-top: 0;
+
+    }
+    .sidebar3 h4{
+        margin-bottom: 0;
+    }
+
+    .sidebar3 div span i {
+        font-style: italic;
+        color:#c0cac3;
+        font-size: 13px;
+    }
+    .sidebar3 div span i:hover {
+        font-style: italic;
+        color:#49968e;
+        font-size: 13px;
+    }
+
+    .sidebar3 div span a {
+        font-size: 12px;
+        color: #748a7a;
+    }
+
+    
+
+    .footer{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        background-color: rgba(176, 206, 188, 0.658);
+        background-image: url(http://www.csszengarden.com/214/bamboo.png);
+    }
+
+    .footer div{
+        border-bottom: solid thin lightgray;
+        padding: 10px;
+    }
+
+    h2{
+        font-family: 'Julius Sans One', sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        color: #2e484c;
+    }
+}
