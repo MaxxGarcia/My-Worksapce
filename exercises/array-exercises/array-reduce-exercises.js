@@ -50,28 +50,46 @@ let flatten = arrays.reduce(function(accumulator, array){
     return accumulator + array;
 })
 
-// function voterResults(voters){
-//     return voters.reduce(function(accumulator, voter){
-//         if (voter.age <= 25) {
-//             return accumulator.youth += 1; 
-//         }
-//         return accumulator;
-//     },{ youngVotes: 0,
-//     youth: 0,
-//     midVotes: 0,
-//     mids: 0,
-//     oldVotes: 0,
-//     olds: 0
-//   })
-// }
-
-let voterResults = voters.reduce(function(accumulator, array){
-    return accumulator.youth += 1
-},{ youngVotes: 0,
+function voterResults(voters){
+    return voters.reduce(function(accumulator, voter){
+        if (voter.age <= 25) {
+            accumulator.youth += 1
+            if(voter.voted){
+                accumulator.youngVotes += 1
+            }
+        } else if (voter.age <= 35){
+            accumulator.mids += 1
+            if(voter.voted){
+                accumulator.midVotes += 1
+            }
+        } else if (voter.age <= 55){
+            accumulator.olds += 1
+            if (voter.voted){
+                accumulator.oldVotes += 1
+            }
+        }
+        return accumulator;
+    },{ youngVotes: 0,
     youth: 0,
     midVotes: 0,
     mids: 0,
     oldVotes: 0,
     olds: 0
   })
-console.log(voterResults)
+}
+
+// var xhr = new XMLHttpRequest();
+
+// var myWatchers;
+// xhr.onreadystatechange = function () {  
+//     if (xhr.readyState === 4 && xhr.status === 200) {
+//         var jsonData = xhr.responseText;
+//         var jsData = JSON.parse(jsonData);
+//         console.log(jsonData);
+//     }
+// }
+console.log(voterResults(voters))
+
+// xhr.open("GET", "https://api.github.com/users/MaxxGarcia/repos", true);  
+
+// xhr.send();

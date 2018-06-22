@@ -148,6 +148,7 @@
         align-self: center;
         padding: 10px;
         color:rgb(255, 255, 255, 0.37);;
+        font-size: 3vw;
 
     }
     .sidebar a {
@@ -352,6 +353,7 @@
     .sidebar p{
         align-self: center;
         padding: 10px;
+        font-size: 2.5vw;
     }
     .sidebar a {
         color: rgba(255, 255, 255, 0.7); 
