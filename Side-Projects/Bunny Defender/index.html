@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Bunny Defender</title>
-    <script src= "libs/phaser.js"></script>
+    <script src= "libs/phaser.js"></script> 
     <script src="Boot.js"></script>
     <script src="Preloader.js"> </script>
     <script src="StartMenu.js"></script>
@@ -20,7 +20,7 @@
         <div id="gameContainer"></div>
         <script type="text/javascript">
              window.onload = function (){
-                var game = new Phaser.Game(540, 960, Phaser.AUTO, 'gameContainer')
+                var game = new Phaser.Game(540, 960, Phaser.AUTO, 'gameContainer') //phaser game instance. Width, height, let phaser decide, refer back to game container.  
                 game.state.add('Boot', BunnyDefender.Boot);
                 game.state.add('Preloader', BunnyDefender.Preloader);
                 game.state.add('StartMenu', BunnyDefender.StartMenu);
