@@ -14,7 +14,7 @@ class Game{
         
         //testing code
         var circle = new createjs.Shape();
-        circle.graphics.beginFill("red").drawCircle(0,0,40);
+        circle.graphics.beginFill("gold").drawCircle(0,0,40);
         circle.x = circle.y = 100;
         this.stage.addChild(circle);
 

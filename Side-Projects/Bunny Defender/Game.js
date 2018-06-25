@@ -3,13 +3,36 @@ BunnyDefender.Game = function(game) {
     this.bunnyGroup;
     this.totalSpacerocks;
     this.spacerockgroup;
+    this.burst;
+    this.gameover;
+    this.countdown;
+    this.overmessage;
+    this.secondsElapsed;
+    this.timer;
+    this.music;
+    this.ouch;
+    this.boom;
+    this.ding;
 }; //passes in game object from HTML file
 
 BunnyDefender.Game.prototype = {
     create: function() {
+        this.gameover = false;
+        this.secondsElapsed = 0;
+        this.timer = this.time.create(false);
+        this.timer.loop(1000, this.updateSeconds, this);
         this.totalBunnies = 20;
         this.totalSpacerocks = 13;
+        this.music = this.add.audio('game_audio');
+        this.music.play('', 0, 0.3, true);   //marker, position, volume, loop
+        this.ouch = this.add.audio('hurt_audio');
+        this.boom = this.add.audio('explosion_audio');
+        this.ding = this.add.audio('select_audio');
         this.buildWorld();
+    },
+
+    updateSeconds: function(){
+        this.secondsElapsed++;
     },
 
     buildWorld: function(){
@@ -17,6 +40,9 @@ BunnyDefender.Game.prototype = {
         this.add.image(0,800, 'hill'); //positions the hill lower on the screen. 800px from the top.  
         this.buildBunnies();
         this.buildSpaceRocks();
+        this.buildEmitter();
+        this.countdown = this.add.bitmapText(10, 10, 'eightbitwonder', "Bunnies Left " + this.totalBunnies, 20);
+        this.timer.start();
     },
     buildBunnies: function() {
         this.bunnygroup = this.add.group();//creates new group called bunnygroup. 
@@ -67,10 +93,97 @@ BunnyDefender.Game.prototype = {
             r.body.velocity.y = this.rnd.integerInRange(200, 400); //determins how fast the spacerocks fall. 
             r.animations.add('Fall'); //adds the falling animation to the space rocks. 
             r.animations.play('Fall', 24, true); //runs the space rock animation. 
+            r.checkWorldBounds = true;
+            r.events.onOutOfBounds.add(this.resetRock, this);
+        }
+    },
+    resetRock: function(r){
+        if (r.y > this.world.height) {
+            this.respawnRock(r);
+        }
+    },
+    respawnRock: function(r) {
+        if(this.gameover == false) {
+            r.reset(this.rnd.integerInRange(0, this.world.width), this.rnd.realInRange(-1500, 0));
+            r.body.velocity.y = this.rnd.integerInRange(200, 400);
+        }
+    },
+    buildEmitter:function() {
+        this.burst = this.add.emitter(0, 0, 80); //creates burst object as an emitter. Starting at 0x,0y and how many particles it can contain. 
+        this.burst.minParticleScale = 0.3;
+        this.burst.maxParticleScale = 1.2;
+        this.burst.minParticleSpeed.setTo(-30, 30);
+        this.burst.maxParticleSpeed.setTo(30, -30);
+        this.burst.makeParticles('explosion'); //references the preloaded image. 
+        this.input.onDown.add(this.fireBurst, this);
+    },
+    
+    fireBurst: function(pointer) {
+        if(this.gameover == false) {
+            this.boom.play();
+            this.boom.volume = 0.2;
+            this.burst.emitX = pointer.x;
+            this.burst.emitY = pointer.y;
+            this.burst.start(true, 2000, null, 20); //(explode(can either explode or not explode), lifespan, frequency, quantity)
+        }
+    },
+    burstCollision: function(r, b) {
+        this.respawnRock(r); 
+    },
+    bunnyCollision: function(r, b) {
+        if (b.exists){
+            this.ouch.play();
+            this.respawnRock(r);
+            this.makeGhost(b);
+            b.kill();
+            this.totalBunnies--;
+            this.checkBunniesLeft();
+        }
+    },
+    checkBunniesLeft: function(){
+        if(this.totalBunnies <= 0){
+            this.gameover = true;
+            this.music.stop();
+            this.countdown.setText('Bunnies Left 0');
+            this.overmessage = this.add.bitmapText(this.world.centerX-180, this.world.centerY-40, 'eightbitwonder', 'GAME OVER\n\n' + this.secondsElapsed, 42);
+            this.overmessage.align = "center";
+            this.overmessage.inputEnabled = true;
+            this.overmessage.events.onInputDown.addOnce(this.quitGame, this);
+        }else {
+            this.countdown.setText('Bunnies Left ' + this.totalBunnies);
         }
     },
 
-    update: function () {}
+    quitGame: function (pointer){
+        this.ding.play();
+        this.state.start('StartMenu');
+    },
+    friendlyFire: function(b, e){
+        if(b.exists){
+            this.ouch.play();
+            this.makeGhost(b);
+            b.kill();
+            this.totalBunnies--;
+            this.checkBunniesLeft();
+        }
+    },
+    makeGhost: function(b) {
+        bunnyghost = this.add.sprite(b.x-20, b.y-180, 'ghost');
+        bunnyghost.anchor.setTo(0.5, 0.5);
+        bunnyghost.scale.x = b.scale.x
+        this.physics.enable(bunnyghost, Phaser.Physics.ARCADE);
+        bunnyghost.enableBody = true;
+        bunnyghost.checkWorldBounds = true;
+        bunnyghost.body.velocity.y = -800; //removes gravity for this particular entity
+    },
+
+    update: function () {
+        this.physics.arcade.overlap(this.spacerockgroup, this.burst, this.burstCollision, null, this);
+        this.physics.arcade.overlap(this.spacerockgroup, this.bunnygroup, this.bunnyCollision, null, this);
+        this.physics.arcade.overlap(this.bunnygroup, this.burst, this.friendlyFire, null, this);
+
+
+    }
 
 
 };

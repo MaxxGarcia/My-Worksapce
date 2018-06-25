@@ -18,6 +18,12 @@ BunnyDefender.Preloader.prototype = {
 		this.load.image('sky', 'images/sky.png');
 		this.load.atlasXML('bunny', 'images/spritesheets/bunny.png', 'images/spritesheets/bunny.xml');
 		this.load.atlasXML('spacerock', 'images/spritesheets/SpaceRock.png', 'images/spritesheets/SpaceRock.xml');
+		this.load.image('explosion', 'images/explosion.png');
+		this.load.image('ghost', 'images/ghost.png');
+		this.load.audio('explosion_audio', 'audio/explosion.mp3');
+		this.load.audio('hurt_audio', 'audio/hurt.mp3');
+		this.load.audio('select_audio', 'audio/select.mp3');
+		this.load.audio('game_audio', 'audio/bgm.mp3');
 	},
 
 	create: function () {
@@ -25,7 +31,9 @@ BunnyDefender.Preloader.prototype = {
 	},
 
 	update: function () { // update will constantly be running. 
+		if(this.cache.isSoundDecoded('game_audio') && this.ready == false) { 
 		   this.ready = true; // sets the above ready state to true, telling the game we are ready to run. 
 		   this.state.start('StartMenu'); //references back to starmenu.js
+		}
 	}
 };
