@@ -1,10 +1,10 @@
-var rs = require('readline-sync');
+const rs = require('readline-sync');
 
-var possibleItems = ["Chocky Mulk", "Bananna Hammock Hat", "Tall Ants in a Jar", "Something that is maybe a primitive key", "Dead fruit", "Living Fruit", "a whole lot of nothing"];
+const possibleItems = ["Chocky Mulk", "Bananna Hammock Hat", "Tall Ants in a Jar", "Something that is maybe a primitive key", "Dead fruit", "Living Fruit", "a whole lot of nothing"];
 
-var playing = true;
+const playing = true;
 
-var player = {
+const player = {
     name: "",
     hp: 200,
     exp: 0,
@@ -13,35 +13,37 @@ var player = {
 
 }
 
-var Enemy = function (name, item){
-    this.name = name,
-    this.hp = Math.floor(Math.random() * 10),
-    this.item = item,
-    this.attack = Math.floor(Math.random() * 10)
+class Enemy {
+    constructor(name){
+        this.name = name,
+        this.hp = Math.floor(Math.random() * 10),
+        this.item = possibleItems[Math.floor(Math.random() * possibleItems.length)],
+        this.attack = Math.floor(Math.random() * 10)
+    }
 }
 
 player.name = rs.question("welcome! What is your name?\n");
 console.log("\nThis is one heckin forest you find yourself in. Dark, mysterious, and seemily endless.\n")
 
 while (playing){
-    var isWalking = rs.question("\nPress 'W' to begin walking or enter 'print' to look at your inventory.", {limit: ["w","print"], limitMessage: "That's not an option\n"});
+    let isWalking = rs.question("\nPress 'W' to begin walking or enter 'print' to look at your inventory.", {limit: ["w","print"], limitMessage: "That's not an option\n"});
     if (isWalking === "w"){
-        var enemy = Math.floor(Math.random()*3);
+        let enemy = Math.floor(Math.random()*3);
         if (enemy = 1){
             console.log("\nYou have encountered a baddie\n")
-            var inBattle = true;
-            var enemyName = rs.question("\nWould you grace your latest enemy with a name? Just say 'no' if not.\n");
-            var enemyItem = possibleItems[Math.floor(Math.random() * possibleItems.length)];
+            let inBattle = true;
+            let enemyName = rs.question("\nWould you grace your latest enemy with a name? Just say 'no' if not.\n");
+            // var enemyItem = possibleItems[Math.floor(Math.random() * possibleItems.length)];
             if (enemyName == "no") {
                 enemyName = "Poor No Name McGee"
             }
             while (inBattle) {
-            var newEnemy = new Enemy(enemyName, enemyItem)
-            var preBattle = ["Fight", "Run"]
-            var encounter = rs.keyInSelect(preBattle, "\nLooks like " + newEnemy.name + " wants a fight. \n\n Fight or Run?\n");
+            let newEnemy = new Enemy(enemyName)
+            const preBattle = ["Fight", "Run"]
+            let encounter = rs.keyInSelect(preBattle, "\nLooks like " + newEnemy.name + " wants a fight. \n\n Fight or Run?\n");
                 if (encounter === 1){
                     console.log("\nYou run away, but the " + newEnemy.name + " strikes at you during your escape..")
-                    var hit = Math.floor(Math.random()*1);
+                    let hit = Math.floor(Math.random()*1);
                     if(hit === 1){
                         console.log("hitting you for " + newEnemy.attack + " damage.\n")
                         inBattle = false;
@@ -52,7 +54,7 @@ while (playing){
                         continue;
                     }
                 } else if (encounter === 0){
-                    var fighting = true;
+                    let fighting = true;
                     while (fighting) {
                         console.log("You punch " + newEnemy.name + " and " + newEnemy.name + " punches you");
                     player.hp = player.hp - newEnemy.attack;

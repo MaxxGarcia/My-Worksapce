@@ -32,9 +32,9 @@
 //   petObjects.push(pet)
 // }
 
-// // const vegetables = carrots.map(function(carrot){  
-// //     return {type: "carrot", name: carrot}
-// // })
+// const vegetables = carrots.map(function(carrot){  
+//     return {type: "carrot", name: carrot}
+// })
 // const vegetables = carrots.map((carrot) => ({type: "carrot", name: carrot}));
 
 // // friends = people.filter(function(person){  
@@ -68,10 +68,10 @@
 // //   })
 //   const dogs = animals.filter((animal) => animal.type === "dog");
 
-  const greeting = (location, name) => {
-      if(location == "Hawaii" && name == "Janice")
-      return `Hi ${name}!\n\nWelcome to ${location}.\n\nI hope you enjoy your stay. Please ask the president of ${location} if you need anything. `
+//   const greeting = (location, name) => {
+//       if(location == "Hawaii" && name == "Janice")
+//       return `Hi ${name}!\n\nWelcome to ${location}.\n\nI hope you enjoy your stay. Please ask the president of ${location} if you need anything. `
 
-};
+// };
 
-console.log(greeting("Hawaii", "Janice"));
+// console.log(greeting("Hawaii", "Janice"));

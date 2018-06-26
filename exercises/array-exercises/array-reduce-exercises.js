@@ -50,8 +50,8 @@ let flatten = arrays.reduce(function(accumulator, array){
     return accumulator + array;
 })
 
-function voterResults(voters){
-    return voters.reduce(function(accumulator, voter){
+voterResults = (voters) => {
+    return voters.reduce((accumulator, voter) => {
         if (voter.age <= 25) {
             accumulator.youth += 1
             if(voter.voted){
@@ -78,6 +78,8 @@ function voterResults(voters){
   })
 }
 
+console.log(voterResults(voters))
+
 // var xhr = new XMLHttpRequest();
 
 // var myWatchers;
@@ -88,7 +90,7 @@ function voterResults(voters){
 //         console.log(jsonData);
 //     }
 // }
-console.log(voterResults(voters))
+
 
 // xhr.open("GET", "https://api.github.com/users/MaxxGarcia/repos", true);  
 
