@@ -1,0 +1,7 @@
+.myOnlyDiv{
+    border-bottom: solid 10px black;
+}
+
+.myOnlyDiv h4{
+   margin: -20px 10px; 
+}
