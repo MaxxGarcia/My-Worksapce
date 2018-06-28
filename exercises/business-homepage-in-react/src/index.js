@@ -4,7 +4,10 @@ import ReactDOM from "react-dom";
 // const ReactDOM = require("react");
 
 //import styles
-import "./styles.css";
+import "./styles/styles.css";
+import "./styles/sidebar.css";
+import "./styles/content.css";
+import "./styles/footer.css";
 
 //Importing App
 import App from "./App";

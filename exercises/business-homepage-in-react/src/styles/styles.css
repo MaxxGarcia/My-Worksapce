@@ -1,0 +1,9 @@
+*{
+    margin: 0;
+}
+.mainWrapper {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: auto;
+    background-color: rgb(245, 245, 245);
+}

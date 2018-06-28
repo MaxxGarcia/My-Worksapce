@@ -4,15 +4,22 @@ import './index.css';
 
 class App extends Component {
     render(){
-        const box = {
-            color: 'blue',
+        const square = {
+            backgroundColor: 'blue',
+            title: "King",
+            subtitle: "of Crystal Gems",
+            info: "The one true king of all Crystal Gems"
+        }
+        const square2 = {
+            backgroundColor: 'red',
             title: "King",
             subtitle: "of Crystal Gems",
             info: "The one true king of all Crystal Gems"
         }
         return(
             <div>
-                <Box box={box}/>
+                <Box box={square}/>
+                <Box box={square2}/>
             </div>
         )
     }
