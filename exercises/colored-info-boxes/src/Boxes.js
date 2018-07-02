@@ -13,15 +13,4 @@ function Box(props){
     )
 }
 
-// class user extends Component {
-//     constructor(){
-//         super()
-//         this.state
-//     }
-
-//     render(){
-//         return()
-//     }
-// }
-
 export default Box;

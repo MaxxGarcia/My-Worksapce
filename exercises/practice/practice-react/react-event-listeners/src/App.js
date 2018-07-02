@@ -1,4 +1,9 @@
-const heroOjbect = [
+import React, { Component } from 'react';
+import Superhero from "./Superhero"
+import Form from "./Form"
+
+function App(props){
+  const heroOjbect = [
     {
         name: "Miles Morales",
         series: "marvel",
@@ -32,8 +37,21 @@ const heroOjbect = [
   
     },
   ]
+  const styles ={
+    color: "gold",
+    fontSize: "20px",
+    backgroundColor: "whitesmoke",
+    display: "grid"
+}
+    return (
+      <div className="mainWrapper">
+      <Form />
+        {heroOjbect.map((hero, index) =>
+            <Superhero hero={hero} key = {hero.name + index} styles={styles} />
+            
+        )}
+      </div>
+    );
+}
 
-
-  const sortedObject = heroOjbect.sort(hero => {return hero.series === "DC"});
-
-  console.log(sortedObject)
+export default App

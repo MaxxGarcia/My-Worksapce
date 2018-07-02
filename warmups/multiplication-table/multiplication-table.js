@@ -1,7 +1,9 @@
+
+
 const multiTable = (n) => {
-    let table = [];
+    const table = [];
     for (let i = 1; i <= n; i++) {
-        let storage = []
+        const storage = []
         for (let j = 1; j <= n; j++) {
             storage.push(i * j);  
         }
@@ -10,6 +12,6 @@ const multiTable = (n) => {
     return table;
 }
 
-console.log(multiTable(10));
+console.log(multiTable(5)); 
 
 module.exports = multiTable; 
