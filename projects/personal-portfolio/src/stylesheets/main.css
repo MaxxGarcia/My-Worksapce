@@ -1,0 +1,16 @@
+*{
+    margin: 0px;
+}
+body{
+    background: linear-gradient(black, #a5d8e7);
+    background-attachment: fixed;
+    font-family: 'Didact Gothic', sans-serif;
+    color: whitesmoke;
+}
+
+.appWrapper{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 1fr;
+}

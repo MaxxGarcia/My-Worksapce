@@ -1,0 +1,8 @@
+.headerWrapper{
+    display: grid; 
+    grid-template-columns: fr3 repeat(6, auto); 
+}
+
+.mainHeader img{
+    width: 1em;
+}
