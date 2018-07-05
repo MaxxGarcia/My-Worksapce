@@ -18,7 +18,6 @@ xhr.onreadystatechange = function () {
                 document.body.appendChild(h1);
             }
         }
-        
         parsePokemon();
     }   
 };

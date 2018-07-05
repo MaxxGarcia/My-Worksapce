@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+}
+
+.hitsWrapper{
+    display: grid;
+    padding: 20px 50px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.hitsSubWrapper{
+    display: flex;
+    flex-direction: column;
+    border: solid black;
+    padding: 0;
+    height: 175px;
+}
+
+.hitsName{
+    position: relative;
+    top: -20px;
+    background-color: black;
+    color: white;
+    text-align: center;
+
+}
+
+.headerWrapper{
+    display: flex;
+    color: red;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: darkgrey;
+}
+.bojack{
+    position: relative;
+    width: 200px;
+    margin: 10px 10px;
+    padding: 0px;
+}
+.title{
+    font-size: 2em;
+}
+.hitsImage{
+    position: relative;
+    background-size: cover;
+    width: 100%;
+    height: 175px
+}

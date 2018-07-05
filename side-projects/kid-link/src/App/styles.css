@@ -1,0 +1,64 @@
+.sprite{
+    background-image: url(./sprite.png);
+    background-size: 1150%;
+    height: 200px;
+    width: 200px;
+}
+
+.a{
+    animation: myABall 810ms steps(4, end) infinite;
+    animation-direction: alternate;
+}
+.b{
+    animation: myBBall 400ms steps(3, end) infinite;
+    animation-direction: alternate;
+}
+.c{
+    animation: myCBall 800ms steps(5, end) infinite;
+    animation-direction: reverse;
+}
+.d{
+    animation: myDBall 5s steps(2, end) infinite;
+}
+.spriteWrapper{
+    position: absolute;
+    animation: spriteMove 2s ease 3s infinite;
+    animation-direction: alternate;
+}
+
+/* //400p //*/
+
+@keyframes spriteMove {
+    from
+    {left: 20px;
+    top: 20px}
+    to
+    {left: 100px;
+    top: 100px}    
+}
+
+@keyframes myDBall {
+    from
+    {background-position: 0px 400px}
+    to
+    {background-position: -377px 400px}
+}
+
+@keyframes myABall{
+    from
+    {background-position: 780px 0px}
+    to 
+     {background-position: 0px 0px;}
+}
+@keyframes myBBall{
+    from
+    {background-position: 570px 205px}
+    to
+    {background-position: 0px 205px;}
+}
+@keyframes myCBall{
+    from
+    {background-position: -955px 205px}
+    to
+    {background-position: 0px 205px;}
+}

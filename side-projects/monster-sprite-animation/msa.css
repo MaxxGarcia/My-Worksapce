@@ -1,0 +1,19 @@
+.monster {
+    width: 190px;
+    height: 240px;
+    background: url('monster-sprite.png') left center;
+    animation: play 0.8s steps(10) infinite;
+  }
+  .link {
+    width: 50px;
+    height: 50px;
+    background: url('linkOrig.png') left center;
+    animation: link 1s steps(10) infinite;
+  }
+
+  @keyframes play {
+    100% { background-position: -1900px; }
+ }
+ @keyframes link {
+  100% { background-position: -200px; }
+}
