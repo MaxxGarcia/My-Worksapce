@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+}
+
+.header{
+    display: flex;
+    justify-content: space-around;
+    background-color: darkgray;
+    font-size: 3em;
+}
+
+.contentWraper{
+    display: block;
+    height: 1000px;
+    justify-content: center;
+    font-size: 3em;
+    padding: 0 100px;
+}
+
+.about{
+    background-color: seagreen;
+    padding-top: 200px;
+}
+.home{
+    background-color: maroon;
+    padding-top: 200px;
+}
+.contact{
+    background-color: royalblue;
+    padding-top: 200px;
+}
