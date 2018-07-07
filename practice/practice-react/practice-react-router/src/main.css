@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+}
+
+body{
+    background-color: maroon;
+}
+
+.header{
+    display: flex;
+    justify-content: space-around;
+    background-color: darkgray;
+    padding: 20px 0;
+}
+
+.contentWraper{
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+    font-size: 3em;
+    background-color: maroon;
+}
