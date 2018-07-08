@@ -1,0 +1,32 @@
+*{
+    margin: 0px;
+    font-size: 1.2em;
+}
+
+.appWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    margin-top: 10%;
+}
+
+.time{
+    color: lightseagreen;
+    font-size: 3em;
+}
+
+.buttonWrapper{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+button{
+    color: white;
+    background-color: lightseagreen;
+}
+
+.lapWrapper{
+    font-size: 2.25em;
+    color: seagreen;
+}

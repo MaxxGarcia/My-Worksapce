@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {storeTime } from './redux'
+import {secondsTime, minutesTime, resetTime, lapTime, miliTime} from './redux'
 
 class App extends Component {
   constructor(){
@@ -12,46 +12,63 @@ class App extends Component {
     this.handleStart = this.handleStart.bind(this);
     this.handleStop = this.handleStop.bind(this);
     this.handleReset = this.handleReset.bind(this);
+    this.handleLap = this.handleLap.bind(this);
+    this.theTicker = null;
   }
   handleChange(e) {
     this.setState({[e.target.name]: e.target.value})
   }
   handleStart(e){
     e.preventDefault();
-      setInterval(() =>{
-        let time = new Date();
-        let seconds = time.getSeconds();
-        let minutes = time.getMinutes();
-        this.setState({seconds, minutes})
-        this.props.storeTime(this.state)}, 1000)
+    this.theTicker = setInterval(() =>{
+      if(this.props.miliseconds < 99){
+        this.props.miliTime(this.state)
+      }else if(this.props.seconds < 59){
+        this.props.secondsTime(this.state) 
+      } else {
+        this.props.minutesTime(this.state)
+      }
+    }, 10)
   }
   handleStop(e){
     e.preventDefault();
-    this.setState({mySwitchie: false})
+    clearInterval(this.theTicker)
+    this.theTicker = null;
   }
   handleReset(e){
     e.preventDefault();
-    
-    this.props.storeTime(this.state.time)
+    clearInterval(this.theTicker)
+    this.theTicker = null;
+    this.props.resetTime(this.state)
+  }
+  handleLap(e){
+    e.preventDefault();
+    this.setState({timeArray: [{minutes: this.props.minutes, seconds: this.props.seconds}]});
+    this.props.lapTime({minutes: this.props.minutes, seconds: this.props.seconds, miliseconds: this.props.miliseconds})
   }
   render() {
         return (
       <div className="appWrapper">
-        <div> {this.props.minutes}:{this.props.seconds}  </div>
-        <div>
-          
+        <div className="time"> {this.props.minutes}:{this.props.seconds}:{this.props.miliseconds}  </div>
+        <div className="buttonWrapper">
           <button onClick={this.handleStart} > Start </button>
-
-          <form onSubmit={this.state.handleStop}>
-            <button> Stop </button>
-          </form>
-          <form onSubmit={this.state.handleReset}>
-            <button> Reset </button>
-          </form>
+          <button onClick={this.handleStop}> Stop </button>
+          <button onClick={this.handleReset}> Reset </button>
+          <button onClick={this.handleLap}> Lap </button>
+        </div>
+        <div className="lapWrapper"> 
+          {this.props.laps.map((lap, i) => {
+              return(
+              <div key={lap+i}>
+                {lap.minutes}:{lap.seconds}: {lap.miliseconds}
+                <hr/>
+              </div>
+              )
+          })} 
         </div>
       </div>
     );
   }
 }
 
-export default connect(state => state, { storeTime }) (App);
+export default connect(state => state, { secondsTime, minutesTime, resetTime, lapTime, miliTime }) (App);
