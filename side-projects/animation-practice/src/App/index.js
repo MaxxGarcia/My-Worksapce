@@ -24,6 +24,14 @@ class Sprite extends Component {
                 backgroundSize: "1150%",
                 height: "65px",
                 width: "38px"
+            },
+            dragBox:{
+                position: "absolute",
+                height: "100px",
+                width: "50px",
+                top: "200px",
+                left: "200px",
+                border: "solid black"
             }
         }
     }
@@ -89,17 +97,6 @@ class Sprite extends Component {
             }))
         })
     }
-    drag(e){
-        e.dataTransfer.setData('text', e.target.id)
-    }
-    drop(e){
-        e.preventDefault();
-        var data = e.dataTransfer.getData("text");
-        e.target.appendChild(document.getElementById(data));
-    }
-    allowDrop(e){
-        e.preventDefault();
-    }
     render(){
         return (
             <div >
@@ -108,10 +105,10 @@ class Sprite extends Component {
                     <div className="sprite b"></div>
                     <div className="sprite c"></div> */}
                     {/* <div style={this.state.ball}className="sprite d"></div> */}
-                    <div id="surge" style={this.state.surge} className="surge" draggable="true" onDragStart="drag(event)"></div>
+                    <div id="surge" style={this.state.surge} className="surge" draggable="true" onDragStart={this.state.drag}></div>
                 </div>
                 
-                <div id="dragbox" onDrop={this.state.dropdrop} onDragOver={this.state.drag} >
+                <div id="dragbox" style={this.state.dragBox} onDrop={this.state.dropdrop} onDragOver={this.state.drag} >
                 </div>
             </div >
         )
