@@ -8,12 +8,19 @@ class App extends Component {
   render() {
     return (
       <div className="appWrapper">
-          <Form />
-          <div id="uglyWrapper">
-            {this.props.uglies.map((sub, i) => {
-            return <Uglies key={i}sub={sub} i={i}/>
-            })}
-          </div>
+        <Toggler render={props => {
+          const { toggled, handleToggle } = props;
+            return (
+              <div>
+                <Form />
+                <div id="uglyWrapper">
+                  {this.props.uglies.map((sub, i) => {
+                  return <Uglies key={i}sub={sub} i={i}/>
+                  })}
+                </div>
+              </div>
+            )
+          }}/>
         </div>
     )
   }
