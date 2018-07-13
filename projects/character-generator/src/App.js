@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { } from './redux'
-import Content from './Content'
+import { Switch, Route } from 'react-router-dom'
+import Races from './Races'
 import Footer from './Footer'
 import Sidebar from "./Sidebar"
+import Classes from './Classes'
 
 
 class App extends Component {
@@ -11,7 +13,10 @@ class App extends Component {
     return (
       <div className="appWrapper">
         <Sidebar/>
-        <Content/>
+        <Switch >
+          <Route exact path ='/' component={ Races }/>
+          <Route exact path ='/classes' component={ Classes }/>
+        </Switch>
         <Footer/>
       </div>
     );

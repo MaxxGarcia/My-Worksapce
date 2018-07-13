@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 
 function Sidebar() {
     return (
         <div className="sidebarWrapper">
             <header className="leftSidebar">
                 <img src="https://app.roll20.net/v2/images/roll20-logo.png?v=2" alt="Imagine a cool logo here" className="logo" />
-                <div>Race Info</div>
-                <div>Roll Character</div>
-                <div>Class Info</div>
+                <div> <Link to="/" >Race Info</Link></div>
+                <div> <Link to="/RollCharacters" >Roll Character</Link></div>
+                <div> <Link to="/Classes" >Class Info</Link></div>
                 <div className="icons">
                     <p>Connect With Us!</p>
                     <a href="https://www.facebook.com/pages/Roll20/439774126041559">
