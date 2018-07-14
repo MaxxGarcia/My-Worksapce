@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { } from './redux'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, withRouter } from 'react-router-dom'
 import Races from './Races'
 import Footer from './Footer'
 import Sidebar from "./Sidebar"
@@ -15,7 +15,7 @@ class App extends Component {
         <Sidebar/>
         <Switch >
           <Route exact path ='/' component={ Races }/>
-          <Route exact path ='/classes' component={ Classes }/>
+          <Route path ='/classes' component={ Classes }/>
         </Switch>
         <Footer/>
       </div>
@@ -23,4 +23,4 @@ class App extends Component {
   }
 }
 
-export default connect(state => state, { })( App);
+export default withRouter(connect(state => state, { })( App));

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { getJoke } from './redux'
-import {Switch, Route} from 'react-router-dom'
+import {Switch, Route, withRouter} from 'react-router-dom'
 import Nav from './Nav.js'
 import About from './About'
 import Joke from './Joke'
@@ -32,4 +32,4 @@ class App extends Component {
   }
 }
 
-export default connect(state => state, { getJoke })(App);
+export default withRouter(connect(state => state, { getJoke })(App));

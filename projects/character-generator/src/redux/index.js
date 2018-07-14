@@ -115,7 +115,7 @@ export const getTiefling = () => {
         axios.get("http://www.dnd5eapi.co/api/races/9")
             .then(response => {
                 dispatch({
-                    type: "GET_TIEFLINFG",
+                    type: "GET_TIEFLING",
                     tiefling: response.data
                 })
             })
@@ -134,7 +134,150 @@ export const getClasses = () => {
             .catch(err => { console.log(err) })
     }
 }
-
+export const getBarbarian = () => {
+    return dispatch => {
+        axios.get("http://www.dnd5eapi.co/api/classes/1")
+            .then(response => {
+                dispatch({
+                    type: "GET_BARBARIAN",
+                    barbarian: response.data
+                })
+            })
+            .catch(err => { console.log(err) })
+    }
+}
+export const getBard = () => {
+    return dispatch => {
+        axios.get("http://www.dnd5eapi.co/api/classes/2")
+            .then(response => {
+                dispatch({
+                    type: "GET_BARD",
+                    bard: response.data
+                })
+            })
+            .catch(err => { console.log(err) })
+    }
+}
+export const getCleric = () => {
+    return dispatch => {
+        axios.get("http://www.dnd5eapi.co/api/classes/3")
+            .then(response => {
+                dispatch({
+                    type: "GET_CLERIC",
+                    cleric: response.data
+                })
+            })
+            .catch(err => { console.log(err) })
+    }
+}
+export const getDruid = () => {
+    return dispatch => {
+        axios.get("http://www.dnd5eapi.co/api/classes/4")
+            .then(response => {
+                dispatch({
+                    type: "GET_DRUID",
+                    druid: response.data
+                })
+            })
+            .catch(err => { console.log(err) })
+    }
+}
+export const getFighter = () => {
+    return dispatch => {
+        axios.get("http://www.dnd5eapi.co/api/classes/5")
+            .then(response => {
+                dispatch({
+                    type: "GET_FIGHTER",
+                    fighter: response.data
+                })
+            })
+            .catch(err => { console.log(err) })
+    }
+}
+export const getMonk = () => {
+    return dispatch => {
+        axios.get("http://www.dnd5eapi.co/api/classes/6")
+            .then(response => {
+                dispatch({
+                    type: "GET_MONK",
+                    monk: response.data
+                })
+            })
+            .catch(err => { console.log(err) })
+    }
+}
+export const getPaladin = () => {
+    return dispatch => {
+        axios.get("http://www.dnd5eapi.co/api/classes/7")
+            .then(response => {
+                dispatch({
+                    type: "GET_PALADIN",
+                    paladin: response.data
+                })
+            })
+            .catch(err => { console.log(err) })
+    }
+}
+export const getRanger = () => {
+    return dispatch => {
+        axios.get("http://www.dnd5eapi.co/api/classes/8")
+            .then(response => {
+                dispatch({
+                    type: "GET_RANGER",
+                    ranger: response.data
+                })
+            })
+            .catch(err => { console.log(err) })
+    }
+}
+export const getRogue = () => {
+    return dispatch => {
+        axios.get("http://www.dnd5eapi.co/api/classes/9")
+            .then(response => {
+                dispatch({
+                    type: "GET_ROGUE",
+                    rogue: response.data
+                })
+            })
+            .catch(err => { console.log(err) })
+    }
+}
+export const getSorcerer = () => {
+    return dispatch => {
+        axios.get("http://www.dnd5eapi.co/api/classes/10")
+            .then(response => {
+                dispatch({
+                    type: "GET_SORCERER",
+                    sorcerer: response.data
+                })
+            })
+            .catch(err => { console.log(err) })
+    }
+}
+export const getWarlock = () => {
+    return dispatch => {
+        axios.get("http://www.dnd5eapi.co/api/classes/11")
+            .then(response => {
+                dispatch({
+                    type: "GET_WARLOCK",
+                    warlock: response.data
+                })
+            })
+            .catch(err => { console.log(err) })
+    }
+}
+export const getWizard = () => {
+    return dispatch => {
+        axios.get("http://www.dnd5eapi.co/api/classes/12")
+            .then(response => {
+                dispatch({
+                    type: "GET_WIZARD",
+                    wizard: response.data
+                })
+            })
+            .catch(err => { console.log(err) })
+    }
+}
 
 const exactState = {
     races: [],
@@ -147,7 +290,19 @@ const exactState = {
     halfElf: [],
     halfOrc: [],
     tiefling: [],
-    classes: []
+    classes: [],
+    barbarian: [],
+    bard: [],
+    cleric: [],
+    druid: [],
+    fighter: [],
+    monk: [],
+    paladin: [],
+    ranger: [],
+    rogue: [],
+    sorcerer: [],
+    warlock: [],
+    wizard: [],
 }
 
 export const reducer = (prevState = exactState, action) => {
@@ -206,6 +361,66 @@ export const reducer = (prevState = exactState, action) => {
             return {
                 ...prevState,
                 classes: action.classes
+            }
+            case 'GET_BARBARIAN':
+            return {
+                ...prevState,
+                barbarian: action.barbarian
+            }
+            case 'GET_BARD':
+            return {
+                ...prevState,
+                bard: action.bard
+            }
+            case 'GET_CLERIC':
+            return {
+                ...prevState,
+                cleric: action.cleric
+            }
+            case 'GET_DRUID':
+            return {
+                ...prevState,
+                druid: action.druid
+            }
+            case 'GET_FIGHTER':
+            return {
+                ...prevState,
+                fighter: action.fighter
+            }
+            case 'GET_MONK':
+            return {
+                ...prevState,
+                monk: action.monk
+            }
+            case 'GET_PALADIN':
+            return {
+                ...prevState,
+                paladin: action.paladin
+            }
+            case 'GET_RANGER':
+            return {
+                ...prevState,
+                ranger: action.ranger
+            }
+            case 'GET_ROGUE':
+            return {
+                ...prevState,
+                rogue: action.rogue
+            }
+            case 'GET_SORCERER':
+            return {
+                ...prevState,
+                sorcerer: action.sorcerer
+            }
+            case 'GET_WARLOCK':
+            return {
+                ...prevState,
+                warlock: action.warlock
+            }
+            case 'GET_WIZARD':
+            return {
+                ...prevState,
+                wizard: action.wizard
             }
         default:
             return prevState

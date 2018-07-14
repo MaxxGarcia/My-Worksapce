@@ -9,25 +9,25 @@ class App extends Component {
         <Toggler render={props => {
           const { toggled, handleToggle } = props;
           return (
-  <div>
-    <button onClick={handleToggle}>Edit</button>
-    {toggled && <Form inputs={{
-      name: '',
-      occupation: ''
-    }} reset
-      submit={inputData => alert("Target Nutralized")}
-      render={props => {
-        const { handleSubmit, handleChange, inputs } = props;
-        return (
-          <form onSubmit={handleSubmit}>
-            <input value={inputs.name} name="name" type="text" onChange={handleChange} />
-            <input value={inputs.occupation} name="occupation" type="text" onChange={handleChange} />
-            <button>Submit</button>
-          </form>
-        )
-      }} />}
-  </div>
-)
+            <div>
+              <button onClick={handleToggle}>Edit</button>
+              {toggled && <Form inputs={{
+                name: '',
+                occupation: ''
+              }} reset
+                submit={inputData => alert("Target Nutralized")}
+                render={props => {
+                  const { handleSubmit, handleChange, inputs } = props;
+                  return (
+                    <form onSubmit={handleSubmit}>
+                      <input value={inputs.name} name="name" type="text" onChange={handleChange} />
+                      <input value={inputs.occupation} name="occupation" type="text" onChange={handleChange} />
+                      <button>Submit</button>
+                    </form>
+                  )
+                }} />}
+            </div>
+          )
         }} />
       </div>
     )
