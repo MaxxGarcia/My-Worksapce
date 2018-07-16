@@ -6,6 +6,7 @@ import Races from './Races'
 import Footer from './Footer'
 import Sidebar from "./Sidebar"
 import Classes from './Classes'
+import Spellbook from './Spellbook'
 
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
         <Switch >
           <Route exact path ='/' component={ Races }/>
           <Route path ='/classes' component={ Classes }/>
+          <Route path ='/spellbook' component={ Spellbook }/>
         </Switch>
         <Footer/>
       </div>

@@ -1,8 +1,7 @@
 .mainFooter{
     grid-column: 2/-1;
     border-top: solid black 2px;
-    margin: 50px 50px 20px 50px;
-    padding-top: 13%;
+    margin: 29vw 50px 20px 50px
 }
 .fancy{
     font-family: 'Tangerine', cursive;

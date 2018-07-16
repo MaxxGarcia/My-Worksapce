@@ -279,6 +279,31 @@ export const getWizard = () => {
     }
 }
 
+export const getSpellList = () => {
+    return dispatch => {
+        axios.get("http://www.dnd5eapi.co/api/spells")
+            .then(response => {
+                dispatch({
+                    type: "GET_SPELL_LIST",
+                    spellList: response.data.results
+                })
+            })
+            .catch(err => { console.log(err) })
+    }
+}
+export const getSpell = (spellUrl) => {
+    return dispatch => {
+        axios.get(`${spellUrl}`)
+            .then(response => {
+                dispatch({
+                    type: "GET_SPELL",
+                    spell: response.data
+                })
+            })
+            .catch(err => { console.log(err) })
+    }
+}
+
 const exactState = {
     races: [],
     dwarf: {},
@@ -303,6 +328,8 @@ const exactState = {
     sorcerer: [],
     warlock: [],
     wizard: [],
+    spellList: [],
+    spell: ''
 }
 
 export const reducer = (prevState = exactState, action) => {
@@ -421,6 +448,16 @@ export const reducer = (prevState = exactState, action) => {
             return {
                 ...prevState,
                 wizard: action.wizard
+            }
+            case 'GET_SPELL_LIST':
+            return {
+                ...prevState,
+                spellList: action.spellList
+            }
+            case 'GET_SPELL':
+            return {
+                ...prevState,
+                spell: action.spell
             }
         default:
             return prevState

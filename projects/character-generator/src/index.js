@@ -9,6 +9,7 @@ import "./styles/footer.css"
 import "./styles/races.css"
 import "./styles/sidebar.css"
 import './styles/classes.css'
+import './styles/spellbook.css'
 
 ReactDOM.render(
 <Router>

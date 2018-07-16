@@ -7,7 +7,7 @@ function Sidebar() {
             <header className="leftSidebar">
                 <img src="https://app.roll20.net/v2/images/roll20-logo.png?v=2" alt="Imagine a cool logo here" className="logo" />
                 <div> <Link to="/" >Race Info</Link></div>
-                <div> <Link to="/rollcharacters" >Spellbook</Link></div>
+                <div> <Link to="/spellbook" >Spellbook</Link></div>
                 <div> <Link to="/classes" >Class Info</Link></div>
                 <div className="icons">
                     <p>Connect With Us!</p>

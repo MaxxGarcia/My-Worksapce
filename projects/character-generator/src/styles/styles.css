@@ -1,8 +1,31 @@
 *{
     margin: 0;
+    font-family: 'Cormorant Infant', serif;
+}
+body{
+    background-color: rgb(245, 245, 245);
 }
 .appWrapper {
     display: grid;
     grid-template-columns: 25% 75%;
     background-color: rgb(245, 245, 245);
+    grid-gap: 25px
+}
+
+@media (max-width: 1220px){
+    .appWrapper {
+        grid-gap: 4%;
+    }
+}
+
+@media (max-width: 800px){
+    .appWrapper {
+        grid-gap: 8%;
+    }
+}
+
+@media (max-width: 628px){
+    .appWrapper {
+        grid-gap: 12%;
+    }
 }
