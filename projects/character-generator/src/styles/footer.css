@@ -1,5 +1,5 @@
 .mainFooter{
-    grid-column: 2/-1;
+    grid-column-start: 2;
     border-top: solid black 2px;
     margin: 29vw 50px 20px 50px
 }
