@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
 import SimpleShapes from './Components/SimpleShapes';
 import TestingThings from './Components/TestingThings.js'
+import SimpleBarChart from './Components/SimpleBarChart'
 
 class App extends Component {
-  constructor(){
+  constructor() {
     super();
-    this.state= {
+    this.state = {
 
     }
   }
-  componentDidMount(){
+  componentDidMount() {
    
   }
   render() {
     return (
       <div className="App">
+        <SimpleBarChart />
         {/* <SimpleShapes /> */}
         {/* <TestingThings /> */}
       </div>

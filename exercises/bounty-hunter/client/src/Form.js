@@ -1,0 +1,55 @@
+import React, { Component } from "react";
+import { connect } from 'react-redux';
+import { newBounty } from './redux'
+import BountyList from './BountyList'
+
+class Form extends Component {
+    constructor() {
+        super();
+        this.state = {
+            bountyFirstName: '',
+            bountyLastName: '',
+            bountyLiving: 'unknown',
+            bountyAmount: '',
+            bountyType: "unknown",
+        }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+
+    }
+    handleChange(e) {
+        this.setState({ [e.target.name]: e.target.value })
+    }
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.newBounty(this.state)
+    }
+    render() {
+        const { bountyFirstName, bountyLastName, bountyLiving, bountyAmount, bountyType } = this.state;
+        return (
+            <div className="formWrapper">
+                <form onSubmit={this.handleSubmit}>
+                    <input type='text' name="bountyFirstName" onChange={this.handleChange} placeholder="Bounty First Name?" value={bountyFirstName} />
+                    <input type='text' name="bountyLastName" onChange={this.handleChange} placeholder="Bounty Last Name?" value={bountyLastName} />
+                    <select type='text' name="bountyLiving" onChange={this.handleChange} placeholder="Is Bounty Alive?" value={bountyLiving}>
+                        <option value="Unknown" selected="selected">Unknown</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                    <input type='text' name="bountyAmount" onChange={this.handleChange} placeholder="Bount Amount" value={bountyAmount} />
+                    <select type='text' name="bountyType" onChange={this.handleChange} placeholder="Bounty Type" value={bountyType}>
+                        <option value="Unknown" selected="selected">Unknown</option>
+                        <option value="Jedi">Jedi</option>
+                        <option value="Sith">Sith</option>
+                    </select>
+                    <button>Add Bounty</button>
+                </form>
+                <div>
+                    <BountyList />
+                </div>
+            </div>
+        )
+    }
+}
+
+export default connect(state => state, { newBounty })(Form);

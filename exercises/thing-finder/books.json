@@ -1,0 +1,58 @@
+[
+    {
+        "title": "Wonderwoman",
+        "year": 2017,
+        "author": "JK Rolling",
+        "_id": "8be7e73d-1f5a-494f-b0a1-b17d453e6ae3",
+        "price": 100,
+        "banned": true
+    },
+    {
+        "title": "Wonderman",
+        "year": 2020,
+        "author": "JRR Tolkien",
+        "_id": "be1f4a26-ebe2-47b3-b249-d3c530b59218",
+        "price": 100,
+        "banned": true
+    },
+    {
+        "title": "Incredibles",
+        "year": 1999,
+        "author": "Dan Rogers",
+        "_id": "f7e8032c-d6c1-49fd-aff9-24e88abcc88e",
+        "price": 100,
+        "banned": false
+    },
+    {
+        "title": "Increidbles 2",
+        "year": 2018,
+        "author": "Bruce Wayne",
+        "_id": "c6b348e5-113e-495d-a41d-e526733994d5",
+        "price": 100,
+        "banned": true
+    },
+    {
+        "title": "Game of Thrones",
+        "year": 1991,
+        "author": "George RR Martin",
+        "_id": "c6b348e5-113e-495d-a41d-e526733994d5",
+        "price": 100,
+        "banned": false
+    },
+    {
+        "title": "Harry Potter",
+        "year": 1998,
+        "author": "JK Rolling",
+        "_id": "c6b348e5-113e-495d-a41d-e526733994d5",
+        "price": 100,
+        "banned": true
+    },
+    {
+        "title": "Feat",
+        "year": 2018,
+        "author": "A Made Up Name",
+        "_id": "c6b348e5-113e-495d-a41d-e526733994d5",
+        "price": 100,
+        "banned": false
+    }
+]

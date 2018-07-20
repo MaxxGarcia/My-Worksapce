@@ -245,6 +245,7 @@ export const getRogue = () => {
 export const getSorcerer = () => {
     return dispatch => {
         axios.get("http://www.dnd5eapi.co/api/classes/10")
+        //movies/:id
             .then(response => {
                 dispatch({
                     type: "GET_SORCERER",

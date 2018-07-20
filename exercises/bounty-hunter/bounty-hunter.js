@@ -4,10 +4,14 @@ const uuid = require('uuid')
 const PORT = 8080;
 
 const BOUNTIES = [
-
+    {
+        firstName: "maxx",
+        lastName: "garcia",
+        living: false,
+        bountyAmount: 100,
+        type: "jedi"
+    }
 ]
-
-
 
 const app = express();
 app.use(bodyParser.json());
