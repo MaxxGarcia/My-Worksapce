@@ -3,7 +3,7 @@ function stringifyUrl(url, query) {
         return url;
     }
     let newurl = url + '?' 
-   for (const key in query) {
+   for (key in query) {
     newurl = newurl + `${key}=${query[key]}&`
    }
    newurl = newurl.substring(0, newurl.length -1)

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class SimpleBarChart extends Component {
+class UsingArc extends Component {
   constructor() {
     super();
     this.state = {
@@ -11,18 +11,23 @@ class SimpleBarChart extends Component {
     window.onload = function () {
       var canvas = document.getElementById('myCanvas');
       var ctx = canvas.getContext('2d');
-      
-      var scores = [100, 90, 85, 45, 72, 88];
-      var width = 50;
-      var currX = 50;
-      
 
-      ctx.fillStyle = "green"
-      for (let i = 0; i < scores.length; i++) {
-        var h = scores[i];
-        ctx.fillRect(currX, canvas.height -h, width, h);
-        currX += width + 10;
+      var scores = [100, 90, 85, 45, 72, 88];
+      scores.sort((a, b) => b - a);
+      var width = 50;
+      var currX = 0;
+
+      ctx.translate(375, 200);
+      ctx.rotate(1 * Math.PI);
+
+      ctx.fillStyle = "green";
+      for (var i = 0; i < scores.length; i++){
+        ctx.fillRect(currX, 0, width, scores[i]);
+        currX += width +10;
       }
+
+      ctx.fillStyle = 'red';
+      ctx.arc(100, 100, 30, 0, 2 * Math.PI, false)
     }
   }
   render() {
@@ -34,4 +39,4 @@ class SimpleBarChart extends Component {
   }
 }
 
-export default SimpleBarChart;
+export default UsingArc;

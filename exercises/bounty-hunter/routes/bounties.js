@@ -1,7 +1,7 @@
 const express = require("express");
-const bodyParser = require("body-parser");
+const bountyRoutes = express.Router();
 const uuid = require('uuid')
-const PORT = 8080;
+
 
 const BOUNTIES = [
     {
@@ -11,38 +11,35 @@ const BOUNTIES = [
         bountyAmount: 100,
         type: "jedi"
     }
-]
+];
 
-const app = express();
-app.use(bodyParser.json());
-
-app.route("/bounties")
+bountyRoutes.route("/")
     .get((req, res) => {
-        res.send(BOUNTIES);
+        res.status(200).send(BOUNTIES);
     })
     .post((req, res) => {
         let newBounty = req.body;
         newBounty._id = uuid();      
         BOUNTIES.push(newBounty);
-        res.send(newBounty);
+        res.status(201).send(newBounty);
     });
 
-app.route("/bounties/:id/")
+bountyRoutes.route("/:id")
     .get((req, res) => {
         let foundBounty = BOUNTIES.find(bounty =>  bounty._id === req.params.id);
-        res.send(foundBounty);
+        res.status(200).send(foundBounty);
     })
     .put((req, res) => {
         let foundBounty = BOUNTIES.find(bounty =>  bounty._id === req.params.id);
         for (const key in req.body) {
             foundBounty [key] = req.body[key]
         }
-        res.send(foundBounty);
+        res.status(202).send(foundBounty);
     })
     .delete((req, res) => {
         let foundBounty = BOUNTIES.find(bounty =>  bounty._id === req.params.id);
         BOUNTIES.splice(BOUNTIES.indexOf(foundBounty))
-        res.send("Bounty ELMINATED Forever")
-    })  
+        res.status(202).send("Bounty ELMINATED Forever")
+    })
 
-    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+module.exports = bountyRoutes

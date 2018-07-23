@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import SimpleShapes from './Components/SimpleShapes';
 import TestingThings from './Components/TestingThings.js'
-import SimpleBarChart from './Components/SimpleBarChart'
+import SimpleBarChart from './Components/SimpleBarChart';
+import SimpleBarChartWithTransformations from './Components/SimpleBarChartWithTransformations'
+import UsingArc from "./Components/UsingArc"
 
 class App extends Component {
   constructor() {
@@ -16,7 +18,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <SimpleBarChart />
+        <UsingArc />
+        {/* <SimpleBarChartWithTransformations /> */}
+        {/* <SimpleBarChart /> */}
         {/* <SimpleShapes /> */}
         {/* <TestingThings /> */}
       </div>
