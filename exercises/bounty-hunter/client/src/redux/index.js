@@ -15,6 +15,18 @@ export const newBounty = bounty => {
         .catch(err => { console.log(err) })
     }
 }
+export const getBounties = () => {
+    return dispatch => {
+        axios.get(`/bounties`)
+            .then(response => {
+                dispatch({
+                    type: "BOUNTIES",
+                    bounties: response.data
+                })
+            })
+        .catch(err => { console.log(err) })
+    }
+}
 export const delBounty = bountyId => {
     return dispatch => {
         axios.delete(`/bounties/${bountyId}`)
@@ -40,6 +52,10 @@ const reducer = (prevState = { bounties: [] }, action) => {
                 bounties: prevState.bounties.filter((item, i) => {
                     return item._id !== action.bountyId
                 })
+            }
+        case "BOUNTIES":
+            return {
+                bounties: [...prevState.bounties, action.bounties] 
             }
         default:
             return prevState

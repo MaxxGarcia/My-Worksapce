@@ -4,6 +4,10 @@ import TestingThings from './Components/TestingThings.js'
 import SimpleBarChart from './Components/SimpleBarChart';
 import SimpleBarChartWithTransformations from './Components/SimpleBarChartWithTransformations'
 import UsingArc from "./Components/UsingArc"
+import UsingArcTo from "./Components/UsingArcTo"
+import LinesPaths from "./Components/LinesPaths"
+import SimpleLineChart from "./Components/SimpleLineChart"
+import UsingBezierCurveTo from "./Components/UsingBezierCurveTo"
 
 class App extends Component {
   constructor() {
@@ -18,7 +22,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <UsingArc />
+        <UsingBezierCurveTo />
+        {/* <SimpleLineChart /> */}
+        {/* <LinesPaths /> */}
+        {/* <UsingArcTo /> */}
+        {/* <UsingArc /> */}
         {/* <SimpleBarChartWithTransformations /> */}
         {/* <SimpleBarChart /> */}
         {/* <SimpleShapes /> */}

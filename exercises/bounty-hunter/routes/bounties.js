@@ -1,45 +1,39 @@
 const express = require("express");
+const Bounty = require("../modles/bounties")
+
 const bountyRoutes = express.Router();
-const uuid = require('uuid')
 
-
-const BOUNTIES = [
-    {
-        firstName: "maxx",
-        lastName: "garcia",
-        living: false,
-        bountyAmount: 100,
-        type: "jedi"
-    }
-];
 
 bountyRoutes.route("/")
-    .get((req, res) => {
-        res.status(200).send(BOUNTIES);
+.get((req, res) => {
+    Bounty.find({}, (err, bounties) => {
+        return err ? res.status("this one").send(err) : res.status(200).send(bounties);
     })
-    .post((req, res) => {
-        let newBounty = req.body;
-        newBounty._id = uuid();      
-        BOUNTIES.push(newBounty);
-        res.status(201).send(newBounty);
-    });
+})
+.post((req, res) => {
+    const newBounty = new Bounty(req.body)
+    newBounty.save(req.body, (err, bounties) => {
+        return err ? res.status("that one").send(err) : res.status(200).send(req.body);
+    })
+})
 
 bountyRoutes.route("/:id")
-    .get((req, res) => {
-        let foundBounty = BOUNTIES.find(bounty =>  bounty._id === req.params.id);
-        res.status(200).send(foundBounty);
+.get((req, res) => {
+    Bounty.findById(req.params.id, (err, foundBounty) => {
+        return err ? res.status(500).send(err) : res.status(200).send(foundBounty);
     })
-    .put((req, res) => {
-        let foundBounty = BOUNTIES.find(bounty =>  bounty._id === req.params.id);
-        for (const key in req.body) {
-            foundBounty [key] = req.body[key]
-        }
-        res.status(202).send(foundBounty);
+})
+.put((req,res) => {
+    Bounty.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedBounty) => {
+        return err ? res.status(500).send(err) : res.status(200).send(updatedBounty);
     })
-    .delete((req, res) => {
-        let foundBounty = BOUNTIES.find(bounty =>  bounty._id === req.params.id);
-        BOUNTIES.splice(BOUNTIES.indexOf(foundBounty))
-        res.status(202).send("Bounty ELMINATED Forever")
+})
+.delete((req, res) => {
+    Bounty.findByIdAndRemove(req.params.id, (err) => {
+        return err ? res.status(500).send(err) : res.status(200).send(updatedBounty);
+
     })
+})
+
 
 module.exports = bountyRoutes

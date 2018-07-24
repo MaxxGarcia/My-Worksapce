@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { newBounty } from './redux'
+import { newBounty, getBounties } from './redux'
 import BountyList from './BountyList'
 
 class Form extends Component {
@@ -24,6 +24,9 @@ class Form extends Component {
         e.preventDefault();
         this.props.newBounty(this.state)
     }
+    componentDidMount(){
+        window.onload = this.props.getBounties()
+      }
     render() {
         const { bountyFirstName, bountyLastName, bountyLiving, bountyAmount, bountyType } = this.state;
         return (
@@ -52,4 +55,4 @@ class Form extends Component {
     }
 }
 
-export default connect(state => state, { newBounty })(Form);
+export default connect(state => state, { newBounty, getBounties })(Form);
