@@ -9,9 +9,9 @@ class Form extends Component {
         this.state = {
             bountyFirstName: '',
             bountyLastName: '',
-            bountyLiving: 'unknown',
-            bountyAmount: '',
-            bountyType: "unknown",
+            bountyLiving: 'Unknown',
+            bountyAmount: 0,
+            bountyType: "Unknown",
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -35,13 +35,13 @@ class Form extends Component {
                     <input type='text' name="bountyFirstName" onChange={this.handleChange} placeholder="Bounty First Name?" value={bountyFirstName} />
                     <input type='text' name="bountyLastName" onChange={this.handleChange} placeholder="Bounty Last Name?" value={bountyLastName} />
                     <select type='text' name="bountyLiving" onChange={this.handleChange} placeholder="Is Bounty Alive?" value={bountyLiving}>
-                        <option value="Unknown" selected="selected">Unknown</option>
+                        <option value="Unknown">Unknown</option>
                         <option value="Yes">Yes</option>
                         <option value="No">No</option>
                     </select>
-                    <input type='text' name="bountyAmount" onChange={this.handleChange} placeholder="Bount Amount" value={bountyAmount} />
+                    <input type='number' name="bountyAmount" onChange={this.handleChange} placeholder="Bount Amount" value={bountyAmount} />
                     <select type='text' name="bountyType" onChange={this.handleChange} placeholder="Bounty Type" value={bountyType}>
-                        <option value="Unknown" selected="selected">Unknown</option>
+                        <option value="Unknown" >Unknown</option>
                         <option value="Jedi">Jedi</option>
                         <option value="Sith">Sith</option>
                     </select>

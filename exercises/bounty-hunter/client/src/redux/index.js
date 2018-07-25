@@ -4,9 +4,9 @@ import thunk from 'redux-thunk';
 
 export const newBounty = bounty => {
     return dispatch => {
+        console.log(bounty)
         axios.post(`/bounties`, bounty)
             .then(response => {
-                console.log(response.data)
                 dispatch({
                     type: "NEW_BOUNTY",
                     bounty: response.data
@@ -44,6 +44,7 @@ export const delBounty = bountyId => {
 const reducer = (prevState = { bounties: [] }, action) => {
     switch (action.type) {
         case "NEW_BOUNTY":
+            console.log([...prevState.bounties, action.bounty])
             return {
                 bounties: [...prevState.bounties, action.bounty]
             }
@@ -55,7 +56,7 @@ const reducer = (prevState = { bounties: [] }, action) => {
             }
         case "BOUNTIES":
             return {
-                bounties: [...prevState.bounties, action.bounties] 
+                bounties: action.bounties 
             }
         default:
             return prevState

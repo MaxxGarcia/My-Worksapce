@@ -7,12 +7,16 @@ const bountySchema = new Schema({
         required: true
     },
     bountyLastName: String, 
-    bountyLiving: Boolean,
-    bountyPrice: Number,
+    bountyLiving: String,
+    bountyAmount: Number,
     bountyType: {
         type: String,
-        enum: ["jedi", "sith", "Unknown"]
+        enum: ["Jedi", "Sith", "Unknown"]
     },
+});
+
+const universSchema = new Schema({
+        galaxies: []
 });
 
 module.exports = mongoose.model("Bounty", bountySchema);

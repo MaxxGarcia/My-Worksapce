@@ -8,9 +8,10 @@ const MONGODB_URI = "mongodb://localhost:27017/demo"
 
 app.use(bodyParser.json())
 app.use('/bounties', require("./routes/bounties"))
-// app.use((req, res) => {
-//     res.status(400).send({message: "Bad Request"})
-// })
+
+app.use((req, res) => {
+    res.status(400).send({message: "Bad Request"})
+})
 
 mongoose.connect(MONGODB_URI, {useNewUrlParser: true})
 .then(db => console.log("Connected to MongoDB"))
