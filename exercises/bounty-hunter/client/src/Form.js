@@ -25,7 +25,7 @@ class Form extends Component {
         this.props.newBounty(this.state)
     }
     componentDidMount(){
-        window.onload = this.props.getBounties()
+       this.props.getBounties()
       }
     render() {
         const { bountyFirstName, bountyLastName, bountyLiving, bountyAmount, bountyType } = this.state;

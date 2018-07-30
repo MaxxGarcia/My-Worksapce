@@ -8,8 +8,8 @@ const app = express();
 
 app.use(bodyParser.json())
     .use('/universes', require("./routes/universes"))
-    .use((req, res) => {
-        res.status(400).send({message: "Bad Request"})
+    .use((err, req, res, next) => {
+        res.status(400).send(err)
     })
 
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true })

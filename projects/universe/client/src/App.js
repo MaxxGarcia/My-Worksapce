@@ -1,21 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { connect } from 'react-redux';
+import Header from "./Header"
+import Footer from "./Footer"
+import BarChart from "./BarChart"
+import { getUniverses } from "./redux"
+import { Switch, Route, withRouter } from 'react-router-dom'
+import Universes from "./Universes"
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+    }
+    
+  }
+  
+  componentDidMount() {
+    this.props.getUniverses();
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <div className="appWrapper">
+        <Header />
+        <Switch>
+        <Route exact path ='/' component={ Universes } />
+        <Route path='/BarChart' component={ BarChart } />
+        </Switch>
+        <Footer />
+      </div >
     );
   }
 }
 
-export default App;
+export default withRouter(connect(state => state, { getUniverses })(App));

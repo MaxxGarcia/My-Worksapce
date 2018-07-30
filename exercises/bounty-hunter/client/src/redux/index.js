@@ -24,7 +24,7 @@ export const getBounties = () => {
                     bounties: response.data
                 })
             })
-        .catch(err => { console.log(err) })
+            .catch(err => { console.log(err) })
     }
 }
 export const delBounty = bountyId => {
@@ -44,7 +44,6 @@ export const delBounty = bountyId => {
 const reducer = (prevState = { bounties: [] }, action) => {
     switch (action.type) {
         case "NEW_BOUNTY":
-            console.log([...prevState.bounties, action.bounty])
             return {
                 bounties: [...prevState.bounties, action.bounty]
             }
