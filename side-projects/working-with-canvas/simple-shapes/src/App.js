@@ -8,6 +8,7 @@ import UsingArcTo from "./Components/UsingArcTo"
 import LinesPaths from "./Components/LinesPaths"
 import SimpleLineChart from "./Components/SimpleLineChart"
 import UsingBezierCurveTo from "./Components/UsingBezierCurveTo"
+import BreakOut from "./Components/BreakOut"
 
 class App extends Component {
   constructor() {
@@ -22,7 +23,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <UsingBezierCurveTo />
+        <BreakOut />
+        {/* <UsingBezierCurveTo /> */}
         {/* <SimpleLineChart /> */}
         {/* <LinesPaths /> */}
         {/* <UsingArcTo /> */}

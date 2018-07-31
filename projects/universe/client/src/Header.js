@@ -15,6 +15,7 @@ class Header extends Component {
         <NavBar>
            <Link to="/">Universe Collective</Link> 
            <Link to="/BarChart"> Universe Data</Link>
+           <Link to="/BreakOut"> Simple BreakOut </Link>
            <div>Login</div> 
         </NavBar>
       </div >

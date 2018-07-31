@@ -6,6 +6,7 @@ import BarChart from "./BarChart"
 import { getUniverses } from "./redux"
 import { Switch, Route, withRouter } from 'react-router-dom'
 import Universes from "./Universes"
+import BreakOut from './BreakOut';
 
 class App extends Component {
   constructor() {
@@ -25,6 +26,7 @@ class App extends Component {
         <Switch>
         <Route exact path ='/' component={ Universes } />
         <Route path='/BarChart' component={ BarChart } />
+        <Route path='/BreakOut' component= { BreakOut } />
         </Switch>
         <Footer />
       </div >

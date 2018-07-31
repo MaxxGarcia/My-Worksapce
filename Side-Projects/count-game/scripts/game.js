@@ -3,9 +3,7 @@
 class NumberedBox extends createjs.Container {
     constructor(game, number = 0) {
         super();
-
         this.game = game;
-
         var movieclip = new lib.NumberedBox();
         movieclip.numberText.text = number;
         this.addChild(movieclip);
@@ -43,7 +41,7 @@ class Game{
         this.stage.addChild(new lib.Background());
         
         //testing code
-        this.stage.addChild(new NumberedBox(88));
+        // this.stage.addChild(new NumberedBox(88));
 
         this.generateMultipleBoxes();
 
@@ -60,6 +58,7 @@ class Game{
             movieclip.x = Math.random() * this.stage.width - movieclip.getBounds().width;
             movieclip.y = Math.random() * this.stage.height - movieclip.getBounds().height;
         }
+        
     }
     handleClick(numberedBox) {
         this.stage.removeChild(numberedBox);
