@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class UsingBezierCurveTo extends Component {
+class QuadraticCurveTo extends Component {
   constructor() {
     super();
     this.state = {
@@ -17,9 +17,7 @@ class UsingBezierCurveTo extends Component {
 
         ctx.beginPath();
         ctx.moveTo(50,50);
-        ctx.bezierCurveTo(300, 400, 400, 400, 400,300);
-        ctx.lineTo(50, 50);
-       ctx.fill();
+        ctx.quadraticCurveTo(50, 500, 700,50);
 
         ctx.stroke();
         
@@ -35,6 +33,6 @@ class UsingBezierCurveTo extends Component {
   }
 }
 
-export default UsingBezierCurveTo;
+export default QuadraticCurveTo;
 
 

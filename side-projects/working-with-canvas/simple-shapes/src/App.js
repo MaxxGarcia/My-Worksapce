@@ -9,6 +9,10 @@ import LinesPaths from "./Components/LinesPaths"
 import SimpleLineChart from "./Components/SimpleLineChart"
 import UsingBezierCurveTo from "./Components/UsingBezierCurveTo"
 import BreakOut from "./Components/BreakOut"
+import QuadraticCurveTo from "./Components/QuadraticCurveTo"
+import DrawingText from "./Components/DrawingText"
+import DrawingImages from "./Components/DrawingImages"
+import DrawingVideo from "./Components/DrawingVideo"
 
 class App extends Component {
   constructor() {
@@ -23,7 +27,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <BreakOut />
+        <DrawingVideo />
+        {/* <DrawingImages /> */}
+        {/* <DrawingText /> */}
+        {/* <QuadraticCurveTo /> */}
+        {/* <BreakOut /> */}
         {/* <UsingBezierCurveTo /> */}
         {/* <SimpleLineChart /> */}
         {/* <LinesPaths /> */}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Spacehipster</title>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
+    <style type="text/css" >
+        body{
+            margin: 0;
+            padding: 0;
+        }
+    
+    </style>
+</head>
+<body>
+    <script>
+        let config = {
+            type: Phaser.AUTO,
+            width: 800,
+            height: 600,
+            physics: {
+                default: 'arcade',
+                arcade: {
+                    gravity: {
+                        y: 500
+                    },
+                    debug: false
+                }
+            },
+            scene: {
+                key: 'main',
+                prelaod: preload,
+                create: create,
+                update: update
+            }
+        }
+
+        const game = new Phaser.Game(config)
+
+        let SpaceHipster = SpaceHipster || {};
+
+        function preload(){
+            this.load.image('logo', 'assets/images/logo.png');
+            this.load.image('preloadbar', 'assets/images/preloader-bar.png');
+        }
+
+        function create(){
+            this.game.stage.backgroundColor = "#fff";
+
+            this.scale.scaleMode = Phaser.slaceManager.SHOW_ALL;
+            this.scale.minWidth = 240;
+            this.scale.minHeight = 170;
+            this.scale.maxWidth = 2880;
+            this.scalemaxHeight = 1920;
+
+            this.scale.pageAlignHorizontally = true
+            this.scale.setScreenSize(true);
+        }
+        
+        function update(){
+
+        }
+    </script>
+    
+</body>
+</html>
