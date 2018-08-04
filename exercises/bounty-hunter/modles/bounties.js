@@ -15,8 +15,4 @@ const bountySchema = new Schema({
     },
 });
 
-const universSchema = new Schema({
-        galaxies: []
-});
-
 module.exports = mongoose.model("Bounty", bountySchema);
