@@ -38,6 +38,7 @@ const handleSubmit = (e, searchForm) => setGlobalState => {
     
 
     axios.get("/oauth")
+        .then(response => console.log(response))
     // setGlobalState({
     //     searchForm: {
     //         song: ""
