@@ -1,91 +1,158 @@
-.contentWrapper{
+.contentWrapper {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(9, 100px)
+}
+
+.myTitleWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  grid-column: 2/7;
+  font-size: 3em;
+  grid-row-start: 3;
+}
+
+.myTitle b {
+  text-shadow: .06em .06em 10px rgb(22, 37, 39);
+}
+
+.myIntroWrapper {
+  grid-column: 2/8;
+  grid-row-start: 4;
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+
+.arrow {
+  border: solid whitesmoke;
+  background: rgba(250, 250, 250, 0);
+  border-width: 0 5vw 5vw 0;
+  display: inline-block;
+  padding: 5vw;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  box-shadow: 1em 1em 1.5em rgb(60, 93, 99);
+}
+
+.arrowContainer {
+  grid-column: 3/8;
+  grid-row-start: -2;
+  -webkit-animation: jump 2.0s ease 0s infinite normal;
+  animation: jump 2.0s ease 0s infinite normal;
+}
+
+@-webkit-keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-10px);
+  }
+  40% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-10px);
+  }
+  40% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 905px) {
+  .contentWrapper {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: repeat(9, 100px)
-
-}
-
-.myTitleWrapper{
+  }
+  .myTitleWrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    grid-column: 2/7;
+    grid-column-end: -1;
     font-size: 3em;
-    grid-row-start: 3;
-}
-.myTitle b{
-    text-shadow: .06em .06em 10px rgb(22, 37, 39);
-}
-
-.myIntroWrapper{
+    grid-row-start: 2;
+  }
+  .myIntroWrapper {
     grid-column: 2/8;
-    grid-row-start: 4;
+    grid-row-start: 3;
     font-size: 1.5em;
     margin-top: 10px;
-}
-
-.arrow{
+  }
+  .arrow {
     border: solid whitesmoke;
     background: rgba(250, 250, 250, 0);
     border-width: 0 5vw 5vw 0;
     display: inline-block;
-    padding: 5vw;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     box-shadow: 1em 1em 1.5em rgb(60, 93, 99);
-}
-
-.arrowContainer{
+  }
+  .arrowContainer {
     grid-column: 3/8;
-    grid-row-start: -4;
-    -webkit-animation: jump 2.0s ease 0s infinite normal ;
-    animation: jump 2.0s ease 0s infinite normal ;
+    -webkit-animation: jump 2.0s ease 0s infinite normal;
+    animation: jump 2.0s ease 0s infinite normal;
+    grid-row-start: -2;
+  }
 }
 
-@-webkit-keyframes jump {
-    0%{
-        transform: translateY(0);
-      }
-      20%{
-        transform: translateY(-10px);
-      }
-      40%{
-        transform: translateY(0);
-      }
-      50%{
-        transform: translateY(-5px);
-      }
-      60%{
-        transform: translateY(0);
-      }
-      80%{
-        transform: translateY(-10px);
-      }
-      100%{
-        transform: translateY(0);
-      }
+@media (max-width: 570px) {
+  .contentWrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
   }
-  
-  @keyframes jump {
-    0%{
-      transform: translateY(0);
-    }
-    20%{
-      transform: translateY(-10px);
-    }
-    40%{
-      transform: translateY(0);
-    }
-    50%{
-      transform: translateY(-5px);
-    }
-    60%{
-      transform: translateY(0);
-    }
-    80%{
-      transform: translateY(-10px);
-    }
-    100%{
-      transform: translateY(0);
-    }
+  .myTitleWrapper {
+    font-size: 3em;
   }
+  .myIntroWrapper {
+    font-size: 1.5em;
+    margin-top: 10px;
+  }
+  .arrow {
+    border: solid whitesmoke;
+    background: rgba(250, 250, 250, 0);
+    border-width: 0 5vw 5vw 0;
+    display: inline-block;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    box-shadow: 1em 1em 1.5em rgb(60, 93, 99);
+  }
+  .arrowContainer {
+    grid-column: 3/8;
+    -webkit-animation: jump 2.0s ease 0s infinite normal;
+    animation: jump 2.0s ease 0s infinite normal;
+    grid-row-start: -2;
+  }
+}

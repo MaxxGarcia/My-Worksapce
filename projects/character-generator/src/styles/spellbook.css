@@ -1,7 +1,4 @@
 .spellName{
-/* position: absolute; */
-/* top: 15%;
-left: 42%; */
 font-size: 4vw;
 grid-column: 2/5;
 grid-row-start: 2;
@@ -10,9 +7,6 @@ justify-content: center;
 align-items: center;
 }             
 .spellPage{
-    /* position: absolute; */
-    /* top: 10%;
-    left: 90%; */
     font-size: 100%;
     grid-column-start: 6;
     display: flex;
@@ -20,9 +14,6 @@ align-items: center;
     align-items: center;
 } 
 .spellDescription{
-    /* position: absolute; */
-    /* top: 30%;
-    left: 30%; */
     font-size: 2vw;
     grid-column: 2/5;
     grid-row-start: 6;
@@ -32,9 +23,6 @@ align-items: center;
     padding-top: 20px;
 }  
 .spellHigherLevels{
-    /* position: absolute; */
-    /* top: 75%;
-    left: 30%; */
     font-size: 2vw;
     grid-row-start: 7;
     grid-column: 2/5;
@@ -45,9 +33,6 @@ align-items: center;
 
 }  
 .spellSchool{
-    /* position: absolute; */
-    /* top: 10%;
-    left: 20%; */
     font-size: 1vw;
     grid-column-start: 1;
     grid-row-start: 1;
@@ -56,20 +41,6 @@ align-items: center;
     align-items: center;
 }  
 .spellRange{
-    /* position: absolute; */
-    /* top: 22%;
-    left: 55%; */
-    font-size: 1vw;
-    grid-column-start: 4;
-    grid-row: 4/6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.spellComponents{
-    /* position: absolute; */
-    /* top: 22%;
-    left: 35%; */
     font-size: 1vw;
     grid-column-start: 3;
     grid-row: 4/6;
@@ -77,21 +48,23 @@ align-items: center;
     justify-content: center;
     align-items: center;
 }
-.spellMaterials{
-    /* position: absolute; */
-    /* top: 25%;
-    left: 30%; */
+.spellComponents{
     font-size: 1vw;
-    grid-column: 2/6;
+    grid-column: 3/6;
+    grid-row: 4/6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.spellMaterials{
+    font-size: 1vw;
+    grid-column: 2/5;
     grid-row-start: 3;
     display: flex;
     justify-content: flex-start;
    
 }
 .spellRitual{
-    /* position: absolute; */
-    /* top: 22%;
-    left: 70%; */
     font-size: 1vw;
     grid-column-start: 2;
     grid-row: 4/6;
@@ -100,9 +73,7 @@ align-items: center;
     align-items: center;
 }
 .spellLevel{
-    /* position: absolute; */
-    /* top: 10%;
-    left: 55%; */
+
     font-size: 1vw;
     grid-column-start: 3;
     grid-row-start: 1;
@@ -111,9 +82,6 @@ align-items: center;
     align-items: center;
 }
 .spellClasses{
-    /* position: absolute; */
-    /* top: 13%;
-    left: 24%; */
     font-size: 1vw;
     grid-column-start: 1;
     grid-row-start: 2;
@@ -122,15 +90,11 @@ align-items: center;
 
 }
 .spellBackground{
-    /* position: relative; */
     width: 50vw;
     height: 50vw;
 
 }
 .spellTable{
-    /* position: absolute; */
-    /* width: 50vw;
-    height: 50vw; */
     left: 20vw;
     grid-column: 1/-1;
     display: grid;
@@ -145,7 +109,6 @@ align-items: center;
     grid-column: 2/-1;
 }
 .spellForm{
-    /* position: relative;  */
     grid-column: 2/4;
     font-size: 200%
 }

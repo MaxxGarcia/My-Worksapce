@@ -1,9 +1,10 @@
 {
-  "name": "Universe",
+  "name": "universe",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node universe-server.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
@@ -11,6 +12,7 @@
   "description": "",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "mongoose": "^5.2.5",
     "phaser": "^3.11.0",
@@ -21,5 +23,8 @@
     "ignore": [
       "client/*"
     ]
+  },
+  "engines":{
+    "node": "8.11.2"
   }
 }

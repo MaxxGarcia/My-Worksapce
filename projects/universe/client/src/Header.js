@@ -16,7 +16,7 @@ class Header extends Component {
            <Link to="/">Universe Collective</Link> 
            <Link to="/BarChart"> Universe Data</Link>
            <Link to="/BreakOut"> Simple BreakOut </Link>
-           <a target="_blank" href="http://simple-platformer.surge.sh">Simple Platformer</a>
+           <a target="_blank" rel="noopener noreferrer" href="http://simple-platformer.surge.sh">Simple Platformer</a>
            <div>Login</div> 
         </NavBar>
       </div >

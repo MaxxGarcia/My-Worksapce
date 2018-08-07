@@ -12,8 +12,9 @@ export default class Content extends Component {
                     <div className="myIntro">
                         I am a Utah based, full stack developer.  I enjoy continously growing my knowlege base.  In addition to developing websites and apps, I also have a history of working in customer service, leading small scale teams, and building out content for maintaining quality. I also have an Associates Degree in English, AS.  I spend my free time moderating/playing tabletop RPGs, reading/listening to books, and consuming comics. 
                     </div>
+                    <Arrow />
                 </div>
-                <Arrow />
+                
             </div>
         )
     }

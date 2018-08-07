@@ -4,7 +4,7 @@ import thunk from 'redux-thunk';
 
 export const getUniverses = () => {
     return dispatch => {
-        return axios.get(`/universes`)
+        return axios.get(`/api/universes`)
             .then(response => {
                 dispatch({
                     type: "GET_UNIVERSES",
@@ -17,9 +17,9 @@ export const getUniverses = () => {
 
 export const newChild = (body, universeId) => {
     return dispatch => {
-        axios.put(`/universes/${universeId}`, body).then((response) => {
+        axios.put(`/api/universes/${universeId}`, body).then((response) => {
             console.log(response.data);
-            return axios.get(`/universes`)
+            return axios.get(`/api/universes`)
         })
             .then(response => {
                 dispatch({
@@ -33,8 +33,8 @@ export const newChild = (body, universeId) => {
 
 export const newUniverse = (body) => {
     return dispatch => {
-        axios.post(`/universes/`, body).then(() => {
-            return axios.get(`/universes`)
+        axios.post(`/api/universes/`, body).then(() => {
+            return axios.get(`/api/universes`)
         })
             .then(response => {
                 dispatch({
