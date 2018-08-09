@@ -5,6 +5,7 @@ import { BrowserRouter as Router} from "react-router-dom"
 import "./stylesheets/main.css";
 import "./stylesheets/footer.css";
 import "./stylesheets/content.css";
+import './stylesheets/projects.css';
 
 
 ReactDOM.render(

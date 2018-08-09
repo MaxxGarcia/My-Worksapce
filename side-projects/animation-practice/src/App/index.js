@@ -101,8 +101,9 @@ class Sprite extends Component {
         return (
             <div >
                 <div className="spriteWrapper">
-                    {/* <div className="sprite a"></div>
-                    <div className="sprite b"></div>
+                    HELLO
+                    {/* <div className="sprite a"></div> */}
+                    {/* <div className="sprite b"></div>
                     <div className="sprite c"></div> */}
                     {/* <div style={this.state.ball}className="sprite d"></div> */}
                     <div id="surge" style={this.state.surge} className="surge" draggable="true" onDragStart={this.state.drag}></div>

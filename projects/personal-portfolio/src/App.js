@@ -5,12 +5,17 @@ import Content from "./Content";
 import Projects from "./Projects";
 
 class App extends Component {
+  constructor(){
+    super()
+
+  }
+
   render() {
     return (
       <div className="appWrapper">
         <Switch>
           <Route exact path='/' component={ Content }/>
-          <Route path="Projects" component={ Projects } />
+          <Route path="/Projects" component={ Projects } />
         </Switch>
         <Footer />
       </div>

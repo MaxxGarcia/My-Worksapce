@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Arrow from "./Arrow"
 
 export default class Content extends Component {

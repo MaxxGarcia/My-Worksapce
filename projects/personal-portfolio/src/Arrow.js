@@ -6,7 +6,7 @@ export default class Arrow extends Component {
     render(){
         return(
                 <div className="arrowContainer">
-                        <Link to="Projects" className="arrow"></Link>
+                        <Link to="/Projects" className="arrow"></Link>
                 </div>
         )
     }

@@ -36,10 +36,12 @@
 }
 
 .arrowContainer {
+  position: relative;
   grid-column: 3/8;
   grid-row-start: -2;
   -webkit-animation: jump 2.0s ease 0s infinite normal;
   animation: jump 2.0s ease 0s infinite normal;
+  z-index: 100;
 }
 
 @-webkit-keyframes jump {
