@@ -33,7 +33,7 @@ const query = {
 
 // console.log(stringifyUrl(url[0], query));
 
-console.log(objectizzexivy(url[0]));
+console.log(objectizzexivy(url[1]));
 
 // let empty = { };
 // let alias = empty;

@@ -16,6 +16,6 @@ const database = [
     {firstName: "Jack", lastName: "White", age: 2}
 ];
 
-console.log(filterDatabase({}, database))
+console.log(filterDatabase({firstName: "Jack", lastName: "Smith"}, database))
 
 module.exports = filterDatabase

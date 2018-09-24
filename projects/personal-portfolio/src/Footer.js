@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import gitHubLogo from "./imges/GitHub-Mark-120px-plus.png";
 import pdfLogo from "./imges/round-pdf-icon.png";
 import linkedInLogo from "./imges/linked-in.png";
+import maxxres from "./imges/maxxgarciaresumeaug2018 (1).docx"
 
 export default class Footer extends Component {
     render() {
@@ -10,7 +11,7 @@ export default class Footer extends Component {
 
                 <div className="subFooterWrapper">
                     <div className="gitWrapper">
-                        <a href="" target="_blank" rel="noopener noreferrer" >
+                        <a href={maxxres} download target="_blank" rel="noopener noreferrer" >
                             <img className="icons" src={pdfLogo} alt="Icon from flaticon.com" />
                         </a>
                     </div>
