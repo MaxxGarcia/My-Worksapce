@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import gitHubLogo from "./imges/GitHub-Mark-120px-plus.png";
 import pdfLogo from "./imges/round-pdf-icon.png";
 import linkedInLogo from "./imges/linked-in.png";
-import maxxres from "./imges/maxxgarciaresumeaug2018 (1).docx"
+import maxxres from "./imges/maxxgarciaresume.docx"
 
 export default class Footer extends Component {
     render() {
