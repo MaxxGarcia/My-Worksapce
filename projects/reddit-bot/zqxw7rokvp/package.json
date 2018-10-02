@@ -1,0 +1,17 @@
+{
+  "name": "node-sandbox",
+  "version": "1.0.0",
+  "description": "Simple Node Sandbox",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index.js localhost 8080"
+  },
+  "dependencies": {
+    "dotenv": "6.0.0",
+    "snoostorm": "0.0.5",
+    "snoowrap": "1.15.2"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.4"
+  }
+}
