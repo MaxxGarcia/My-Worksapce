@@ -14,11 +14,26 @@ const client = new snoostorm(r);
 
 const streamOpts = {
   subreddit: "all",
-  results: 1
+  results: 5
 };
 
-const comments = client.CommentStream(streamOpts);
+// for comments
+// const comments = client.CommentStream(streamOpts);
 
-comments.on("comments", comments => {
-  console.log(comments)
-});
+//for posts
+const submission = client.SubmissionStream(streamOpts);
+submission.on("submission", submission => {
+  console.log(`New Submission by ${submission.author.name}`)
+})
+
+
+// for comments
+// comments.on("comment", comment => {
+//   // reply to any comment that has a :( with a :)
+//   // if(comment.body === ':(') {
+//   //   comment.reply(':)');
+//   // }
+//   if(comment.body.includes("Overwatch")) {
+//       console.log(comment.body)
+//     }
+// });
