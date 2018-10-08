@@ -12,8 +12,8 @@ const app = express();
 app.use(bodyParser.json())
     .use("/private", expressJWT({secret: process.env.SECRET}))
     .use(bodyParser.urlencoded({ extended: false }))
-    .use('/private/editUsers', require('./routes/songs'))
-    .use('/private/editHouses', require('./routes/songs'))
+    // .use('/private/editUsers', require('./routes/users'))
+    // .use('/private/editHouses', require('./routes/users'))
     .use('/users', require('./routes/users'))
     .use('/houses', require('./routes/houses'))
     .use((err, req, res, next) => {
