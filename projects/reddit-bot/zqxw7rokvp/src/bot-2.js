@@ -1,7 +1,24 @@
-require("dotenv").config();
-
+const dotenv = require("dotenv").config();
+const express = require("express");
+const mongoose = require("mongoose");
+const bodyParser = require('body-parser');
+const expressJWT = require("express-jwt");
 const snoowrap = require("snoowrap");
 const snoostorm = require("snoostorm");
+const PORT = 8080;
+const MONGODB_URI = 'mongodb://localhost:27017/bootleg_memes';
+const app = express();
+
+app.use(bodyParser.json())
+    .use("/private", expressJWT({secret: process.env.SECRET}))
+    .use(bodyParser.urlencoded({ extended: false }))
+    .use('/private/editUsers', require('./routes/songs'))
+    .use('/private/editHouses', require('./routes/songs'))
+    .use('/users', require('./routes/users'))
+    .use('/houses', require('./routes/houses'))
+    .use((err, req, res, next) => {
+      res.status(400).send(err)
+  });
 
 const r = new snoowrap({
   userAgent: "reddit-bod-example-node",
@@ -73,3 +90,10 @@ comments.on("comment", comment => {
 // houseDatabase[house].points += points;
 
 // console.log(houseDatabase[house].points);
+
+
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
+    .then((db) => console.log("DB is Online!"))
+    .catch(err => console.log(err));
+
+    app.listen(PORT, () => console.log(`Connected to showtunes Server on ${PORT}`));
